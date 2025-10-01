@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>    
-    <ProjectReference Include="..\Barnamenevis.Net.FontInstaller\Barnamenevis.Net.Tools.csproj" />    
-    <ProjectReference Include="..\Barnamenevis.Net.RtlMessageBox.Wpf\Barnamenevis.Net.RtlMessageBox.Wpf.csproj" />
+    <ProjectReference Include="..\Barnamenevis.Net.RtlMessageBox.Wpf\Barnamenevis.Net.RtlMessageBox.Wpf.csproj" />    
+    <ProjectReference Include="..\Barnamenevis.Net.Tools\Barnamenevis.Net.Tools.csproj" />
   </ItemGroup>
 
 </Project>

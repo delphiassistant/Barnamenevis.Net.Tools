@@ -10,7 +10,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Barnamenevis.Net.RtlMessage
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Barnamenevis.Net.RtlMessageBox.Wpf.Demo", "Barnamenevis.Net.RtlMessageBox.Wpf.Demo\Barnamenevis.Net.RtlMessageBox.Wpf.Demo.csproj", "{7C27C8C1-1234-4567-8901-123456789ABF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barnamenevis.Net.Tools", "Barnamenevis.Net.FontInstaller\Barnamenevis.Net.Tools.csproj", "{9664E01A-BDA3-4A55-8428-4D45643D4881}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barnamenevis.Net.Tools", "Barnamenevis.Net.Tools\Barnamenevis.Net.Tools.csproj", "{9664E01A-BDA3-4A55-8428-4D45643D4881}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
