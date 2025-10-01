@@ -433,5 +433,5 @@ If `MainForm.Designer.cs` becomes corrupted:
 ## 📚 See Also
 
 - [RtlMessageBox.WindowsForms Documentation](../Barnamenevis.Net.RtlMessageBox.WindowsForms/README.md) - Main library documentation
-- [Barnamenevis.Net.Tools Documentation](../Barnamenevis.Net.FontInstaller/README.md) - Font installation utilities  
+- [Barnamenevis.Net.Tools Documentation](../Barnamenevis.Net.Tools/README.md) - Font installation utilities  
 - [WPF Demo](../Barnamenevis.Net.RtlMessageBox.Wpf.Demo/README.md) - WPF version comparison

@@ -315,5 +315,5 @@ static void Main()
 
 ## 🔗 See Also
 
-- [FontInstaller Documentation](../Barnamenevis.Net.FontInstaller/README.md) - Font installation utilities
+- [FontInstaller Documentation](../Barnamenevis.Net.Tools/README.md) - Font installation utilities
 - [WPF RTL MessageBox](../Barnamenevis.Net.RtlMessageBox.Wpf/README.md) - WPF version with additional theming

@@ -368,5 +368,5 @@ private void CustomScenario_Click(object sender, RoutedEventArgs e)
 ## 📚 See Also
 
 - [RtlMessageBox.Wpf Documentation](../Barnamenevis.Net.RtlMessageBox.Wpf/README.md) - Main library documentation  
-- [Barnamenevis.Net.Tools Documentation](../Barnamenevis.Net.FontInstaller/README.md) - Font installation utilities
+- [Barnamenevis.Net.Tools Documentation](../Barnamenevis.Net.Tools/README.md) - Font installation utilities
 - [Vazirmatn Font](https://rastikerdar.github.io/vazirmatn/) - Recommended Persian font

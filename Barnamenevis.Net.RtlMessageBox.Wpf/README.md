@@ -188,6 +188,6 @@ var result = RtlMessageBox.Show(
 
 ## 📚 See Also
 
-- [Barnamenevis.Net.Tools Documentation](../Barnamenevis.Net.FontInstaller/README.md) - Font installation utilities
+- [Barnamenevis.Net.Tools Documentation](../Barnamenevis.Net.Tools/README.md) - Font installation utilities
 - [Windows Forms RTL MessageBox](../Barnamenevis.Net.RtlMessageBox.WindowsForms/README.md) - Windows Forms version
 - [WPF Demo Application](../Barnamenevis.Net.RtlMessageBox.Wpf.Demo/README.md) - Complete usage examples

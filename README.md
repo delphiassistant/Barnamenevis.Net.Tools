@@ -16,7 +16,7 @@ The solution includes the **Barnamenevis.Net.Tools** library, which currently fo
 |---------|-------------|-------------------|
 | **[Barnamenevis.Net.RtlMessageBox.Wpf](./Barnamenevis.Net.RtlMessageBox.Wpf/)** | Pure WPF implementation with themed UI | .NET 6.0, 7.0, 8.0, 9.0 (Windows) |
 | **[Barnamenevis.Net.RtlMessageBox.WindowsForms](./Barnamenevis.Net.RtlMessageBox.WindowsForms/)** | Win32 MessageBox wrapper with RTL support | .NET 6.0, 7.0, 8.0, 9.0 (Windows) |
-| **[Barnamenevis.Net.Tools](./Barnamenevis.Net.FontInstaller/)** | Comprehensive toolkit for Persian development<br/>*Currently: Font installation utilities*<br/>*Future: Text processing, RTL helpers, Persian calendar, and more* | .NET 6.0, 7.0, 8.0, 9.0 |
+| **[Barnamenevis.Net.Tools](./Barnamenevis.Net.Tools/)** | Comprehensive toolkit for Persian development<br/>*Currently: Font installation utilities*<br/>*Future: Text processing, RTL helpers, Persian calendar, and more* | .NET 6.0, 7.0, 8.0, 9.0 |
 
 ### Demo Applications
 
@@ -115,7 +115,7 @@ Win32 MessageBox wrapper featuring:
 - Compatible with all standard MessageBox overloads
 - Automatic focus management
 
-### [Barnamenevis.Net.Tools](./Barnamenevis.Net.FontInstaller/) - Persian/Arabic Development Toolkit
+### [Barnamenevis.Net.Tools](./Barnamenevis.Net.Tools/) - Persian/Arabic Development Toolkit
 **Current Features (v1.0):**
 - **FontInstaller**: Per-user font installation (no admin privileges required)
 - Support for multiple font formats (TTF, OTF, WOFF, WOFF2, EOT)
@@ -176,7 +176,7 @@ Reference the appropriate project and start using the RTL-enabled MessageBox:
 
 **For Persian/Arabic Development Tools:**
 ```xml
-<ProjectReference Include="path\to\Barnamenevis.Net.FontInstaller\Barnamenevis.Net.Tools.csproj" />
+<ProjectReference Include="path\to\Barnamenevis.Net.Tools\Barnamenevis.Net.Tools.csproj" />
 ```
 
 ## 🎯 Font Setup for Development
@@ -198,7 +198,7 @@ Each project includes comprehensive documentation:
 
 - **[WPF MessageBox Documentation](./Barnamenevis.Net.RtlMessageBox.Wpf/README.md)** - Complete WPF implementation guide
 - **[Windows Forms MessageBox Documentation](./Barnamenevis.Net.RtlMessageBox.WindowsForms/README.md)** - Win32 wrapper implementation guide  
-- **[Barnamenevis.Net.Tools Documentation](./Barnamenevis.Net.FontInstaller/README.md)** - Persian/Arabic development toolkit guide
+- **[Barnamenevis.Net.Tools Documentation](./Barnamenevis.Net.Tools/README.md)** - Persian/Arabic development toolkit guide
 - **[WPF Demo Documentation](./Barnamenevis.Net.RtlMessageBox.Wpf.Demo/README.md)** - WPF demo application guide
 - **[Windows Forms Demo Documentation](./Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo/README.md)** - Windows Forms demo guide
 
