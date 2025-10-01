@@ -1,6 +1,6 @@
 ﻿# Fonts Directory - Persian Typography for RTL MessageBox
 
-This directory is automatically scanned at application startup to install fonts for the **current user only** (no administrator privileges required). It serves as the central location for Persian and Arabic fonts used by the RtlMessageBox demonstrations.
+This directory is automatically scanned at application startup to install fonts for the **current user only** (no administrator privileges required). It serves as the central location for Persian fonts used by the RtlMessageBox demonstrations.
 
 ## 📋 Overview
 
@@ -183,7 +183,7 @@ System:     %LOCALAPPDATA%/Microsoft/Windows/Fonts/Vazirmatn-FD-Regular.ttf
 ### Primary Recommendation: Vazirmatn FD
 - **Source**: https://rastikerdar.github.io/vazirmatn/
 - **License**: SIL Open Font License 1.1
-- **Features**: Comprehensive Persian/Arabic support, multiple weights
+- **Features**: Comprehensive Persian support, multiple weights
 - **Files**: Vazirmatn-FD-Regular.ttf, Vazirmatn-FD-Bold.ttf, etc.
 
 ### Alternative Persian Fonts
@@ -193,7 +193,7 @@ System:     %LOCALAPPDATA%/Microsoft/Windows/Fonts/Vazirmatn-FD-Regular.ttf
 - **Tanha**: Minimalist Persian design
 
 ### Font Selection Criteria
-- ✅ **Unicode Support**: Complete Persian/Arabic character coverage
+- ✅ **Unicode Support**: Complete Persian character coverage
 - ✅ **Readability**: Clear at small sizes (9-12pt)
 - ✅ **License**: Compatible with application distribution
 - ✅ **File Size**: Reasonable for bundling with applications
@@ -208,8 +208,6 @@ Fonts/
 │   ├── Vazirmatn-FD-Regular.ttf
 │   ├── Vazirmatn-FD-Bold.ttf
 │   └── Vazirmatn-FD-Light.ttf
-├── Arabic/
-│   └── NotoSansArabic-Regular.ttf
 └── Fallback/
     └── DejaVuSans.ttf
 ```

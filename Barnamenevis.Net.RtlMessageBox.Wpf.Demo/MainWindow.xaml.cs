@@ -9,40 +9,40 @@ namespace Barnamenevis.Net.RtlMessageBox.Wpf.Demo
             InitializeComponent();
 
             // Configure custom font for themed dialogs - use Vazirmatn which is included
-            global::Barnamenevis.Net.RtlMessageBox.Wpf.RtlMessageBox.PreferredFontName = "Vazirmatn FD";
-            global::Barnamenevis.Net.RtlMessageBox.Wpf.RtlMessageBox.PreferredFontPointSize = 13;
-            global::Barnamenevis.Net.RtlMessageBox.Wpf.RtlMessageBox.ApplyCustomFont = true;
-            global::Barnamenevis.Net.RtlMessageBox.Wpf.RtlMessageBox.UseCustomTitleBar = true;
+            RtlMessageBox.PreferredFontName = "Vazirmatn FD";
+            RtlMessageBox.PreferredFontPointSize = 13;
+            RtlMessageBox.ApplyCustomFont = true;
+            RtlMessageBox.UseCustomTitleBar = true;
         }
 
         // WPF RtlMessageBox demos (pure WPF)
         private void BtnThOk_Click(object sender, RoutedEventArgs e)
         {
-            var r = global::Barnamenevis.Net.RtlMessageBox.Wpf.RtlMessageBox.Show(this,"این یک پیام WPF است.", "پیغام");
+            var r = RtlMessageBox.Show(this,"این یک پیام WPF است.", "پیغام");
             ResultText.Text = $"Result: {r}";
         }
 
         private void BtnThOkCancel_Click(object sender, RoutedEventArgs e)
         {
-            var r = global::Barnamenevis.Net.RtlMessageBox.Wpf.RtlMessageBox.Show(this, "این یک پیام WPF با اطلاعات است.", "اطلاع", MessageBoxButton.OKCancel, MessageBoxImage.Information, MessageBoxResult.OK);
+            var r = RtlMessageBox.Show(this, "این یک پیام WPF با اطلاعات است.", "اطلاع", MessageBoxButton.OKCancel, MessageBoxImage.Information, MessageBoxResult.OK);
             ResultText.Text = $"Result: {r}";
         }
 
         private void BtnThYesNo_Click(object sender, RoutedEventArgs e)
         {
-            var r = global::Barnamenevis.Net.RtlMessageBox.Wpf.RtlMessageBox.Show("آیا با شرایط موافقید؟", "سوال", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes);
+            var r = RtlMessageBox.Show("آیا با شرایط موافقید؟", "سوال", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes);
             ResultText.Text = $"Result: {r}";
         }
 
         private void BtnThYesNoCancel_Click(object sender, RoutedEventArgs e)
         {
-            var r = global::Barnamenevis.Net.RtlMessageBox.Wpf.RtlMessageBox.Show(this, "تغییرات ذخیره شود؟", "هشدار", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning, MessageBoxResult.Yes);
+            var r = RtlMessageBox.Show(this, "تغییرات ذخیره شود؟", "هشدار", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning, MessageBoxResult.Yes);
             ResultText.Text = $"Result: {r}";
         }
 
         private void BtnThError_Click(object sender, RoutedEventArgs e)
         {
-            var r = global::Barnamenevis.Net.RtlMessageBox.Wpf.RtlMessageBox.Show(this, "خطای جدی رخ داده است!", "خطای سیستم", MessageBoxButton.OK, MessageBoxImage.Error);
+            var r = RtlMessageBox.Show(this, "خطای جدی رخ داده است!", "خطای سیستم", MessageBoxButton.OK, MessageBoxImage.Error);
             ResultText.Text = $"Result: {r}";
         }
     }

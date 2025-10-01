@@ -1,18 +1,18 @@
 ﻿# Barnamenevis.Net.Tools
 
-A comprehensive utility library for .NET applications providing tools for Persian/Arabic application development, starting with advanced font management capabilities.
+A comprehensive utility library for .NET applications providing tools for Persian application development, starting with advanced font management capabilities.
 
 ## 📋 Overview
 
-**Barnamenevis.Net.Tools** is designed to be a comprehensive toolkit for Persian and Arabic .NET application development. Currently, the library focuses on **FontInstaller** functionality, with additional developer tools and utilities planned for future releases.
+**Barnamenevis.Net.Tools** is designed to be a comprehensive toolkit for Persian .NET application development. Currently, the library focuses on **FontInstaller** functionality, with additional developer tools and utilities planned for future releases.
 
 ### 🔧 Current Features (v1.0)
 
-The library currently provides the **FontInstaller** class, which allows .NET applications to automatically install fonts for the current user, making it easy to distribute applications with custom Persian, Arabic, or other specialized fonts. The installation is per-user only, requires no admin privileges, and fonts persist after the application closes.
+The library currently provides the **FontInstaller** class, which allows .NET applications to automatically install fonts for the current user, making it easy to distribute applications with custom Persian, or other specialized fonts. The installation is per-user only, requires no admin privileges, and fonts persist after the application closes.
 
 ### 🚀 Future Roadmap
 
-**Barnamenevis.Net.Tools** will be expanded with additional utility classes and tools for Persian/Arabic application development, including:
+**Barnamenevis.Net.Tools** will be expanded with additional utility classes and tools for Persian application development, including:
 - **Persian Text Processing** utilities
 - **RTL Layout Helpers** for custom controls
 - **Persian Date/Calendar** utilities  
@@ -196,11 +196,11 @@ public static void SetupPersianUI()
 
 ## 🤝 Contributing
 
-We welcome contributions! If you have ideas for additional tools and utilities that would benefit Persian/Arabic .NET developers, please:
+We welcome contributions! If you have ideas for additional tools and utilities that would benefit Persian .NET developers, please:
 
 1. Open an issue to discuss your ideas
 2. Submit pull requests for new features
 3. Report bugs or suggest improvements
 4. Help with documentation and examples
 
-Together, we can build a comprehensive toolkit for Persian/Arabic .NET application development!
+Together, we can build a comprehensive toolkit for Persian .NET application development!

@@ -1,6 +1,6 @@
 ﻿# Barnamenevis.Net.RtlMessageBox.Wpf
 
-A pure WPF implementation of RTL-enabled MessageBox with Persian/Arabic language support, custom theming, and automatic Persian button text translation. This library provides a drop-in replacement for WPF MessageBox with enhanced RTL layout support and Persian/Arabic localization.
+A pure WPF implementation of RTL-enabled MessageBox with Persian language support, custom theming, and automatic Persian button text translation. This library provides a drop-in replacement for WPF MessageBox with enhanced RTL layout support and Persian localization.
 
 ## ✨ Features
 
@@ -8,7 +8,7 @@ A pure WPF implementation of RTL-enabled MessageBox with Persian/Arabic language
 - **Automatic Persian Button Text**: OK→تایید, Cancel→انصراف, Yes→بله, No→خیر
 - **Right-to-Left Layout**: Proper RTL text flow and UI alignment
 - **Persian Font Integration**: Automatic detection and use of installed Persian fonts
-- **Unicode Support**: Full support for Persian, Arabic, and other RTL languages
+- **Unicode Support**: Full support for Persian, and other RTL languages
 
 ### 🎨 Advanced UI Features
 - **Themed MessageBox**: Modern appearance that respects system themes
