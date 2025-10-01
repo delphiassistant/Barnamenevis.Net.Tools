@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <!-- Copy Fonts folder to output directory -->
+  <ItemGroup>
+    <None Include="Fonts\**\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>    
+    <ProjectReference Include="..\Barnamenevis.Net.FontInstaller\Barnamenevis.Net.Tools.csproj" />    
+    <ProjectReference Include="..\Barnamenevis.Net.RtlMessageBox.Wpf\Barnamenevis.Net.RtlMessageBox.Wpf.csproj" />
+  </ItemGroup>
+
+</Project>

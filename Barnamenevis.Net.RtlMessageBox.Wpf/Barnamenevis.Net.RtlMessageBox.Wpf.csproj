@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Conservative multi-targeting for broader WPF compatibility -->
+    <TargetFrameworks>net9.0-windows;net8.0-windows;net7.0-windows;net6.0-windows</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!-- NuGet Package Information -->
+    <PackageId>Barnamenevis.Net.RtlMessageBox.Wpf</PackageId>
+    <Version>1.0.0</Version>
+	<Authors>Mehdi Keramati</Authors>
+    <Company>Barnamenevis.Net</Company>
+    <Product>RTL MessageBox for WPF</Product>
+    <Description>A pure WPF implementation of RTL-enabled MessageBox with Persian/Arabic language support, custom theming, and automatic Persian button text translation. Features themed UI, custom title bars, system sound integration, and proper RTL layout for Persian and Arabic applications.</Description>
+    <Summary>RTL-enabled WPF MessageBox with Persian/Arabic support and custom theming</Summary>
+    <PackageTags>WPF;MessageBox;RTL;Persian;Arabic;Farsi;RightToLeft;UI;Dialog;Localization;Persian-UI;Arabic-UI</PackageTags>
+    <PackageProjectUrl>https://github.com/yourusername/RtlMessageBox</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/yourusername/RtlMessageBox</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Copyright>Copyright © 2024 Barnamenevis.Net</Copyright>
+    <PackageReleaseNotes>
+      Version 1.0.0 - Multi-targeting support:
+      - Pure WPF implementation with themed UI
+      - Compatible with .NET 6.0, 7.0, 8.0, and 9.0 (Windows)
+      - Automatic Persian button text translation
+      - Custom title bars with Persian fonts
+      - System sound integration
+      - Full RTL layout support
+      - Drop-in replacement for standard MessageBox
+    </PackageReleaseNotes>
+    
+    <!-- Build Configuration -->
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    
+    <!-- Package Signing Configuration -->
+    <!-- Uncomment and configure when you have your certificate -->
+    <!-- Example: Replace with your actual certificate thumbprint (40 hex characters) -->
+    
+    <SignPackage>true</SignPackage>
+    <PackageCertificateThumbprint>5BA3B89849275AF10D63783CD1680EEFE2B80CA1</PackageCertificateThumbprint>
+    <PackageCertificateTimestampUrl>http://timestamp.digicert.com</PackageCertificateTimestampUrl>
+    
+  </PropertyGroup>
+
+  <!-- Include README in package -->
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

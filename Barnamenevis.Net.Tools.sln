@@ -1,0 +1,48 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Barnamenevis.Net.RtlMessageBox.WindowsForms", "Barnamenevis.Net.RtlMessageBox.WindowsForms\Barnamenevis.Net.RtlMessageBox.WindowsForms.csproj", "{7C27C8C1-1234-4567-8901-123456789ABC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo", "Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo\Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo.csproj", "{7C27C8C1-1234-4567-8901-123456789ABD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Barnamenevis.Net.RtlMessageBox.Wpf", "Barnamenevis.Net.RtlMessageBox.Wpf\Barnamenevis.Net.RtlMessageBox.Wpf.csproj", "{7C27C8C1-1234-4567-8901-123456789ABE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Barnamenevis.Net.RtlMessageBox.Wpf.Demo", "Barnamenevis.Net.RtlMessageBox.Wpf.Demo\Barnamenevis.Net.RtlMessageBox.Wpf.Demo.csproj", "{7C27C8C1-1234-4567-8901-123456789ABF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Barnamenevis.Net.Tools", "Barnamenevis.Net.FontInstaller\Barnamenevis.Net.Tools.csproj", "{9664E01A-BDA3-4A55-8428-4D45643D4881}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C27C8C1-1234-4567-8901-123456789ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C27C8C1-1234-4567-8901-123456789ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C27C8C1-1234-4567-8901-123456789ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C27C8C1-1234-4567-8901-123456789ABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C27C8C1-1234-4567-8901-123456789ABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C27C8C1-1234-4567-8901-123456789ABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C27C8C1-1234-4567-8901-123456789ABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C27C8C1-1234-4567-8901-123456789ABD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C27C8C1-1234-4567-8901-123456789ABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C27C8C1-1234-4567-8901-123456789ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C27C8C1-1234-4567-8901-123456789ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C27C8C1-1234-4567-8901-123456789ABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C27C8C1-1234-4567-8901-123456789ABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C27C8C1-1234-4567-8901-123456789ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C27C8C1-1234-4567-8901-123456789ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C27C8C1-1234-4567-8901-123456789ABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9664E01A-BDA3-4A55-8428-4D45643D4881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9664E01A-BDA3-4A55-8428-4D45643D4881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9664E01A-BDA3-4A55-8428-4D45643D4881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9664E01A-BDA3-4A55-8428-4D45643D4881}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12345678-1234-1234-1234-123456789012}
+	EndGlobalSection
+EndGlobal

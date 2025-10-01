@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Conservative multi-targeting for broader Windows Forms compatibility -->
+    <TargetFrameworks>net9.0-windows;net8.0-windows;net7.0-windows;net6.0-windows</TargetFrameworks>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!-- NuGet Package Information -->
+    <PackageId>Barnamenevis.Net.RtlMessageBox.WindowsForms</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Mehdi Keramati</Authors>
+    <Company>Barnamenevis.Net</Company>
+    <Product>RTL MessageBox for Windows Forms</Product>
+    <Description>A Windows Forms RTL MessageBox implementation that wraps native Win32 MessageBox with automatic Persian/Arabic button text translation and custom font support. Uses Win32 hooks for real-time button translation while maintaining full compatibility with standard MessageBox API.</Description>
+    <Summary>RTL-enabled Windows Forms MessageBox with Persian/Arabic support using Win32 hooks</Summary>
+    <PackageTags>WindowsForms;MessageBox;RTL;Persian;Arabic;Farsi;RightToLeft;Win32;Dialog;Localization;Persian-UI;Arabic-UI;WinForms</PackageTags>
+    <PackageProjectUrl>https://github.com/yourusername/RtlMessageBox</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/yourusername/RtlMessageBox</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Copyright>Copyright © 2024 Barnamenevis.Net</Copyright>
+    <PackageReleaseNotes>
+      Version 1.0.0 - Multi-targeting support:
+      - Win32 MessageBox wrapper with RTL support
+      - Compatible with .NET 6.0, 7.0, 8.0, and 9.0 (Windows)
+      - Automatic Persian button text translation via hooks
+      - Custom font application to all dialog elements
+      - Full API compatibility with WPF MessageBox
+      - Real-time button text modification
+      - Proper focus and default button management
+    </PackageReleaseNotes>
+    
+    <!-- Build Configuration -->
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    
+    <!-- Package Signing Configuration -->
+    <!-- Uncomment and configure when you have your certificate -->
+    <SignPackage>true</SignPackage>
+    <PackageCertificateThumbprint>5BA3B89849275AF10D63783CD1680EEFE2B80CA1</PackageCertificateThumbprint>
+    <PackageCertificateTimestampUrl>http://timestamp.digicert.com</PackageCertificateTimestampUrl>
+  </PropertyGroup>
+
+  <!-- Include README in package -->
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
