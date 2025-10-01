@@ -1,8 +1,8 @@
-# Barnamenevis.Net.RtlMessageBox.Wpf.Demo
+ï»¿# Barnamenevis.Net.RtlMessageBox.Wpf.Demo
 
 A comprehensive WPF demonstration application showcasing the RtlMessageBox library with automatic font installation, Persian UI, and various MessageBox scenarios.
 
-## ?? Overview
+## ğŸ“‹ Overview
 
 This demo application demonstrates the full capabilities of the `Barnamenevis.Net.RtlMessageBox.Wpf` library including:
 - Automatic Persian font installation at startup
@@ -11,32 +11,32 @@ This demo application demonstrates the full capabilities of the `Barnamenevis.Ne
 - Custom theming and font integration
 - Best practices for Persian/RTL UI development
 
-## ? Features Demonstrated
+## âœ¨ Features Demonstrated
 
-### ?? RTL MessageBox Scenarios
+### ğŸŒ RTL MessageBox Scenarios
 - **Information Dialog**: Simple information display with Persian text
 - **Error Dialog**: Error messages with appropriate icons and sounds
 - **Warning Dialog**: Warning prompts with Yes/No options
 - **Question Dialog**: User confirmation dialogs
 - **Multi-button Options**: Yes/No/Cancel combinations
 
-### ?? Technical Features
+### ğŸ”§ Technical Features
 - **Automatic Font Installation**: Downloads and installs Persian fonts at startup
 - **Custom Title Bars**: Demonstrates themed title bars with Persian fonts
 - **System Sound Integration**: Appropriate system sounds for different message types
 - **Focus Management**: Proper keyboard navigation and focus indicators
 - **Owner Window Demo**: Modal dialog behavior with parent windows
 
-### ?? Font Management
+### ğŸ“ Font Management
 - **Bundled Fonts**: Includes Persian fonts in the application package
 - **Runtime Installation**: Installs fonts for current user without admin privileges
 - **Font Detection**: Automatically detects and uses installed Persian fonts
 - **Fallback Handling**: Graceful degradation to system fonts if installation fails
 
-## ?? Running the Demo
+## ğŸš€ Running the Demo
 
 ### Prerequisites
-- **.NET 8.0 SDK** or later
+- **.NET 6.0, 7.0, 8.0, or 9.0 SDK**
 - **Windows 10/11**
 - **Visual Studio 2022** or VS Code (optional, for development)
 
@@ -44,8 +44,8 @@ This demo application demonstrates the full capabilities of the `Barnamenevis.Ne
 
 1. **Clone and Build**:
    ```bash
-   git clone <repository-url>
-   cd RtlMessageBox
+   git clone https://github.com/delphiassistant/Barnamenevis.Net.Tools.git
+   cd Barnamenevis.Net.Tools
    dotnet build
    ```
 
@@ -57,16 +57,16 @@ This demo application demonstrates the full capabilities of the `Barnamenevis.Ne
 3. **Expected Output**:
    ```
    === WPF MessageBox Application Starting ===
-   Application directory: C:\...\bin\Debug\net8.0-windows\
-   Fonts directory: C:\...\bin\Debug\net8.0-windows\Fonts
+   Application directory: C:\...\bin\Debug\net9.0-windows\
+   Fonts directory: C:\...\bin\Debug\net9.0-windows\Fonts
    
    --- Starting Font Installation ---
    FontInstaller: Scanning fonts directory: C:\...\Fonts
    FontInstaller: Installed font for current user: Vazirmatn-FD-Regular.ttf
-   ? Successfully installed 1 new font(s) for current user
+   âœ… Successfully installed 1 new font(s) for current user
    --- Font Installation Complete ---
    
-   ?? Application ready - you can now test the message boxes!
+   ğŸ‰ Application ready - you can now test the message boxes!
    ```
 
 ### Adding Persian Fonts
@@ -79,11 +79,11 @@ This demo application demonstrates the full capabilities of the `Barnamenevis.Ne
 2. **Add to Project**:
    ```
    Barnamenevis.Net.RtlMessageBox.Wpf.Demo/
-   ??? Fonts/
-       ??? Vazirmatn-FD-Regular.ttf
-       ??? Vazirmatn-FD-Bold.ttf
-       ??? Vazirmatn-FD-Light.ttf
-       ??? ...
+   â””â”€â”€ Fonts/
+       â”œâ”€â”€ Vazirmatn-FD-Regular.ttf
+       â”œâ”€â”€ Vazirmatn-FD-Bold.ttf
+       â”œâ”€â”€ Vazirmatn-FD-Light.ttf
+       â””â”€â”€ ...
    ```
 
 3. **Automatic Copy** (already configured):
@@ -96,7 +96,7 @@ This demo application demonstrates the full capabilities of the `Barnamenevis.Ne
    </ItemGroup>
    ```
 
-## ?? Demo Application Features
+## ğŸ¯ Demo Application Features
 
 ### Main Window
 The demo application presents a clean, Persian-friendly interface with:
@@ -109,8 +109,8 @@ The demo application presents a clean, Persian-friendly interface with:
 #### 1. Information Message
 ```csharp
 RtlMessageBox.Show(
-    "Úãá?ÇÊ ÈÇ ãæİŞ?Ê ÇäÌÇã ÔÏ.",
-    "ÇØáÇÚ",
+    "Ø¹Ù…Ù„ÛŒØ§Øª Ø¨Ø§ Ù…ÙˆÙÙ‚ÛŒØª Ø§Ù†Ø¬Ø§Ù… Ø´Ø¯.",
+    "Ø§Ø·Ù„Ø§Ø¹",
     MessageBoxButton.OK,
     MessageBoxImage.Information);
 ```
@@ -118,8 +118,8 @@ RtlMessageBox.Show(
 #### 2. Error Dialog
 ```csharp
 RtlMessageBox.Show(
-    "ÎØÇ?? ÏÑ ÑÏÇÒÔ ÇØáÇÚÇÊ ÑÎ ÏÇÏå ÇÓÊ.",
-    "ÎØÇ",
+    "Ø®Ø·Ø§ÛŒÛŒ Ø¯Ø± Ù¾Ø±Ø¯Ø§Ø²Ø´ Ø§Ø·Ù„Ø§Ø¹Ø§Øª Ø±Ø® Ø¯Ø§Ø¯Ù‡ Ø§Ø³Øª.",
+    "Ø®Ø·Ø§",
     MessageBoxButton.OK,
     MessageBoxImage.Error);
 ```
@@ -127,8 +127,8 @@ RtlMessageBox.Show(
 #### 3. Warning Confirmation
 ```csharp
 var result = RtlMessageBox.Show(
-    "Ç?ä Úãá?ÇÊ ŞÇÈá ÈÇÒÔÊ ä?ÓÊ. ÇÏÇãå ã?Ïå?Ï¿",
-    "åÔÏÇÑ",
+    "Ø§ÛŒÙ† Ø¹Ù…Ù„ÛŒØ§Øª Ù‚Ø§Ø¨Ù„ Ø¨Ø§Ø²Ú¯Ø´Øª Ù†ÛŒØ³Øª. Ø§Ø¯Ø§Ù…Ù‡ Ù…ÛŒâ€ŒØ¯Ù‡ÛŒØ¯ØŸ",
+    "Ù‡Ø´Ø¯Ø§Ø±",
     MessageBoxButton.YesNo,
     MessageBoxImage.Warning);
 ```
@@ -136,8 +136,8 @@ var result = RtlMessageBox.Show(
 #### 4. Question Dialog
 ```csharp
 var result = RtlMessageBox.Show(
-    "Â?Ç ã?ÎæÇå?Ï ÊÛ??ÑÇÊ ÑÇ ĞÎ?Ñå ˜ä?Ï¿",
-    "ĞÎ?Ñå ÊÛ??ÑÇÊ",
+    "Ø¢ÛŒØ§ Ù…ÛŒâ€ŒØ®ÙˆØ§Ù‡ÛŒØ¯ ØªØºÛŒÛŒØ±Ø§Øª Ø±Ø§ Ø°Ø®ÛŒØ±Ù‡ Ú©Ù†ÛŒØ¯ØŸ",
+    "Ø°Ø®ÛŒØ±Ù‡ ØªØºÛŒÛŒØ±Ø§Øª",
     MessageBoxButton.YesNoCancel,
     MessageBoxImage.Question);
 ```
@@ -150,26 +150,26 @@ RtlMessageBox.PreferredFontPointSize = 12;
 RtlMessageBox.UseCustomTitleBar = true;
 
 RtlMessageBox.Show(
-    "Ç?ä ?Çã ÈÇ İæäÊ ÓİÇÑÔ? äãÇ?Ô ÏÇÏå ã?ÔæÏ.",
-    "İæäÊ ÓİÇÑÔ?");
+    "Ø§ÛŒÙ† Ù¾ÛŒØ§Ù… Ø¨Ø§ ÙÙˆÙ†Øª Ø³ÙØ§Ø±Ø´ÛŒ Ù†Ù…Ø§ÛŒØ´ Ø¯Ø§Ø¯Ù‡ Ù…ÛŒâ€ŒØ´ÙˆØ¯.",
+    "ÙÙˆÙ†Øª Ø³ÙØ§Ø±Ø´ÛŒ");
 ```
 
-## ?? Project Structure
+## ğŸ“ Project Structure
 
 ```
 Barnamenevis.Net.RtlMessageBox.Wpf.Demo/
-??? App.xaml                              # Application definition
-??? App.xaml.cs                           # Font installation logic
-??? MainWindow.xaml                       # Main demo window UI
-??? MainWindow.xaml.cs                    # Demo button event handlers
-??? Fonts/                                # Font files directory
-?   ??? README.md                         # Font usage documentation
-?   ??? TESTING.md                        # Testing instructions
-?   ??? [Persian font files]             # TTF/OTF files (add manually)
-??? Barnamenevis.Net.RtlMessageBox.Wpf.Demo.csproj
+â”œâ”€â”€ App.xaml                              # Application definition
+â”œâ”€â”€ App.xaml.cs                           # Font installation logic
+â”œâ”€â”€ MainWindow.xaml                       # Main demo window UI
+â”œâ”€â”€ MainWindow.xaml.cs                    # Demo button event handlers
+â”œâ”€â”€ Fonts/                                # Font files directory
+â”‚   â”œâ”€â”€ README.md                         # Font usage documentation
+â”‚   â”œâ”€â”€ TESTING.md                        # Testing instructions
+â”‚   â””â”€â”€ [Persian font files]             # TTF/OTF files (add manually)
+â””â”€â”€ Barnamenevis.Net.RtlMessageBox.Wpf.Demo.csproj
 ```
 
-## ?? Implementation Details
+## ğŸ”§ Implementation Details
 
 ### App.xaml.cs - Font Installation
 ```csharp
@@ -184,7 +184,7 @@ public partial class App : Application
             
             if (installedCount > 0)
             {
-                Console.WriteLine($"? Installed {installedCount} new font(s)");
+                Console.WriteLine($"âœ… Ù†ØµØ¨ Ø´Ø¯ {installedCount} ÙÙˆÙ†Øª Ø¬Ø¯ÛŒØ¯");
                 
                 // Configure RtlMessageBox to use installed font
                 RtlMessageBox.PreferredFontName = "Vazirmatn FD";
@@ -194,7 +194,7 @@ public partial class App : Application
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"?? Font installation failed: {ex.Message}");
+            Console.WriteLine($"âš ï¸ Ù†ØµØ¨ ÙÙˆÙ†Øª Ø¨Ø§ Ø®Ø·Ø§ Ù…ÙˆØ§Ø¬Ù‡ Ø´Ø¯: {ex.Message}");
             // Application continues with system fonts
         }
         
@@ -225,8 +225,8 @@ public partial class MainWindow : Window
     {
         RtlMessageBox.Show(
             this, // owner window
-            "Ç?ä ?˜ ?Çã ÇØáÇÚÑÓÇä? äãæäå ÇÓÊ.",
-            "ÇØáÇÚ",
+            "Ø§ÛŒÙ† ÛŒÚ© Ù¾ÛŒØ§Ù… Ø§Ø·Ù„Ø§Ø¹â€ŒØ±Ø³Ø§Ù†ÛŒ Ù†Ù…ÙˆÙ†Ù‡ Ø§Ø³Øª.",
+            "Ø§Ø·Ù„Ø§Ø¹",
             MessageBoxButton.OK,
             MessageBoxImage.Information);
     }
@@ -235,7 +235,7 @@ public partial class MainWindow : Window
 }
 ```
 
-## ?? Learning Objectives
+## ğŸ“š Learning Objectives
 
 This demo helps developers understand:
 
@@ -259,7 +259,7 @@ This demo helps developers understand:
 - Silent font installation with fallback options
 - User experience during font loading
 
-## ??? Customization Examples
+## ğŸ¨ Customization Examples
 
 ### Custom Font Configuration
 ```csharp
@@ -302,8 +302,8 @@ private void CustomScenario_Click(object sender, RoutedEventArgs e)
     // File save confirmation
     var result = RtlMessageBox.Show(
         this,
-        "İÇ?á ÊÛ??Ñ ˜ÑÏå ÇÓÊ. Â?Ç ã?ÎæÇå?Ï Âä ÑÇ ĞÎ?Ñå ˜ä?Ï¿",
-        "ĞÎ?Ñå İÇ?á",
+        "ÙØ§ÛŒÙ„ ØªØºÛŒÛŒØ± Ú©Ø±Ø¯Ù‡ Ø§Ø³Øª. Ø¢ÛŒØ§ Ù…ÛŒâ€ŒØ®ÙˆØ§Ù‡ÛŒØ¯ Ø¢Ù† Ø±Ø§ Ø°Ø®ÛŒØ±Ù‡ Ú©Ù†ÛŒØ¯ØŸ",
+        "Ø°Ø®ÛŒØ±Ù‡ ÙØ§ÛŒÙ„",
         MessageBoxButton.YesNoCancel,
         MessageBoxImage.Question);
     
@@ -311,7 +311,7 @@ private void CustomScenario_Click(object sender, RoutedEventArgs e)
     {
         case MessageBoxResult.Yes:
             // Save file logic
-            RtlMessageBox.Show(this, "İÇ?á ĞÎ?Ñå ÔÏ.", "ãæİŞ?Ê", 
+            RtlMessageBox.Show(this, "ÙØ§ÛŒÙ„ Ø°Ø®ÛŒØ±Ù‡ Ø´Ø¯.", "Ù…ÙˆÙÙ‚ÛŒØª", 
                 MessageBoxButton.OK, MessageBoxImage.Information);
             break;
         case MessageBoxResult.No:
@@ -324,7 +324,7 @@ private void CustomScenario_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## ?? Development Tips
+## ğŸ’¡ Development Tips
 
 ### 1. **Font Testing**
 - Test with and without Persian fonts installed
@@ -346,13 +346,13 @@ private void CustomScenario_Click(object sender, RoutedEventArgs e)
 - Test font installation on fresh Windows installations
 - Verify per-user installation works correctly
 
-## ?? Troubleshooting
+## ğŸ” Troubleshooting
 
 ### Common Issues
 
 #### Fonts Not Installing
 ```
-?? FontInstaller: No fonts found in directory
+âš ï¸ FontInstaller: No fonts found in directory
 ```
 **Solution**: Ensure font files are in the `Fonts` directory and copied to output
 
@@ -365,8 +365,8 @@ private void CustomScenario_Click(object sender, RoutedEventArgs e)
 #### Permission Errors
 **Solution**: FontInstaller uses per-user installation - no admin rights needed
 
-## ?? See Also
+## ğŸ“š See Also
 
 - [RtlMessageBox.Wpf Documentation](../Barnamenevis.Net.RtlMessageBox.Wpf/README.md) - Main library documentation  
-- [FontInstaller Documentation](../Barnamenevis.Net.FontInstaller/README.md) - Font installation utilities
+- [Barnamenevis.Net.Tools Documentation](../Barnamenevis.Net.FontInstaller/README.md) - Font installation utilities
 - [Vazirmatn Font](https://rastikerdar.github.io/vazirmatn/) - Recommended Persian font

@@ -15,8 +15,8 @@
     <Description>A utility library for programmatically installing fonts in Windows applications. Provides per-user font installation without requiring administrator privileges, supporting TTF, OTF, WOFF, and other font formats. Perfect for bundling Persian, Arabic, or other custom fonts with your applications.</Description>
     <Summary>Per-user font installation utility for Windows applications</Summary>
     <PackageTags>Font;FontInstaller;Windows;Persian;Arabic;Typography;TTF;OTF;Installation;Tools;Utilities</PackageTags>
-    <PackageProjectUrl>https://github.com/yourusername/RtlMessageBox</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/yourusername/RtlMessageBox</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/delphiassistant/Barnamenevis.Net.Tools</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/delphiassistant/Barnamenevis.Net.Tools</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>

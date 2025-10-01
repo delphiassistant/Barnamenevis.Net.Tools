@@ -1,213 +1,56 @@
-# Barnamenevis.Net.RtlMessageBox.Wpf
+ï»¿# Barnamenevis.Net.RtlMessageBox.Wpf
 
-A pure WPF implementation of RTL-enabled MessageBox with modern theming, Persian language support, and advanced customization options.
+A pure WPF implementation of RTL-enabled MessageBox with Persian/Arabic language support, custom theming, and automatic Persian button text translation. This library provides a drop-in replacement for WPF MessageBox with enhanced RTL layout support and Persian/Arabic localization.
 
-## ?? Overview
+## âœ¨ Features
 
-This library provides a complete replacement for the standard WPF MessageBox with full RTL (Right-to-Left) support, automatic Persian button text translation, custom theming, and advanced features like custom title bars and system sound integration.
+### ğŸŒ RTL Language Support
+- **Automatic Persian Button Text**: OKâ†’ØªØ§ÛŒÛŒØ¯, Cancelâ†’Ø§Ù†ØµØ±Ø§Ù, Yesâ†’Ø¨Ù„Ù‡, Noâ†’Ø®ÛŒØ±
+- **Right-to-Left Layout**: Proper RTL text flow and UI alignment
+- **Persian Font Integration**: Automatic detection and use of installed Persian fonts
+- **Unicode Support**: Full support for Persian, Arabic, and other RTL languages
 
-## ? Key Features
+### ğŸ¨ Advanced UI Features
+- **Themed MessageBox**: Modern appearance that respects system themes
+- **Custom Title Bars**: Optional client-area title bars with Persian fonts
+- **System Sound Integration**: Appropriate sounds for Error, Warning, Information, and Question dialogs
+- **Responsive Design**: Auto-sizing based on content length and screen resolution
+- **Focus Management**: Proper keyboard navigation and focus indicators
+- **Owner Window Support**: Modal dialog behavior with proper parent window relationships
 
-### ?? RTL & Persian Support
-- **Automatic Persian Button Text**: OK?ÊÇ??Ï, Cancel?ÇäÕÑÇİ, Yes?Èáå, No?Î?Ñ
-- **Full RTL Layout**: Proper right-to-left text flow and UI alignment
-- **Persian Font Integration**: Configurable Persian font support (default: IranSansX)
-- **Bi-directional Text**: Handles mixed Persian/English content correctly
-
-### ?? Advanced UI Features
-- **Themed Appearance**: Modern, customizable design
-- **Custom Title Bars**: Optional client-area title bars with preferred fonts
-- **System Sound Integration**: Appropriate sounds for warnings and errors (non-intrusive)
-- **Focus Management**: Proper keyboard navigation with visible focus indicators
-- **Icon Support**: Standard system icons (Error, Warning, Information, Question)
-
-### ?? Customization Options
-- **Font Configuration**: Specify custom fonts and sizes
-- **Title Bar Style**: Choose between system or custom title bars
-- **Sound Control**: Enable/disable system sounds
-- **Owner Window Support**: Proper modal dialog behavior
-
-## ?? Quick Start
-
-### Basic Usage
-
-```csharp
-using Barnamenevis.Net.RtlMessageBox.Wpf;
-
-// Simple message
-var result = RtlMessageBox.Show("ÓáÇã Ïä?Ç!");
-
-// With title
-var result = RtlMessageBox.Show("?ÛÇã ÔãÇ ÇÑÓÇá ÔÏ.", "ãæİŞ?Ê");
-
-// Yes/No question
-var result = RtlMessageBox.Show(
-    "Â?Ç ãØãÆä åÓÊ?Ï ˜å ã?ÎæÇå?Ï ÇÏÇãå Ïå?Ï¿",
-    "ÊÃ??Ï Úãá?ÇÊ",
-    MessageBoxButton.YesNo,
-    MessageBoxImage.Question);
-
-// With owner window
-var result = RtlMessageBox.Show(
-    this, // owner window
-    "ÎØÇ?? ÏÑ ÑÏÇÒÔ ÑÎ ÏÇÏå ÇÓÊ.",
-    "ÎØÇ",
-    MessageBoxButton.OK,
-    MessageBoxImage.Error);
-```
-
-### Configuration
-
-```csharp
-// Configure font settings (before showing dialogs)
-RtlMessageBox.PreferredFontName = "Vazirmatn FD";
-RtlMessageBox.PreferredFontPointSize = 12.0;
-RtlMessageBox.ApplyCustomFont = true;
-
-// Configure title bar style
-RtlMessageBox.UseCustomTitleBar = true; // Custom themed title bar
-// or
-RtlMessageBox.UseCustomTitleBar = false; // System title bar
-```
-
-## ?? API Reference
-
-### Static Properties
-
-| Property | Type | Default | Description |
-|----------|------|---------|-------------|
-| `PreferredFontName` | `string` | `"IranSansX"` | Font family name for all dialog text |
-| `PreferredFontPointSize` | `double` | `12.0` | Font size in points |
-| `ApplyCustomFont` | `bool` | `true` | Enable/disable custom font usage |
-| `UseCustomTitleBar` | `bool` | `true` | Use themed title bar vs system title bar |
-
-### Show Methods
-
-All standard WPF MessageBox.Show overloads are supported:
-
-#### Ownerless Overloads
-```csharp
-MessageBoxResult Show(string messageBoxText)
-MessageBoxResult Show(string messageBoxText, string caption)
-MessageBoxResult Show(string messageBoxText, string caption, MessageBoxButton button)
-MessageBoxResult Show(string messageBoxText, string caption, MessageBoxButton button, MessageBoxImage icon)
-MessageBoxResult Show(string messageBoxText, string caption, MessageBoxButton button, MessageBoxImage icon, MessageBoxResult defaultResult)
-MessageBoxResult Show(string messageBoxText, string caption, MessageBoxButton button, MessageBoxImage icon, MessageBoxResult defaultResult, MessageBoxOptions options)
-```
-
-#### Owner-Aware Overloads
-```csharp
-MessageBoxResult Show(Window owner, string messageBoxText)
-MessageBoxResult Show(Window owner, string messageBoxText, string caption)
-MessageBoxResult Show(Window owner, string messageBoxText, string caption, MessageBoxButton button)
-MessageBoxResult Show(Window owner, string messageBoxText, string caption, MessageBoxButton button, MessageBoxImage icon)
-MessageBoxResult Show(Window owner, string messageBoxText, string caption, MessageBoxButton button, MessageBoxImage icon, MessageBoxResult defaultResult)
-MessageBoxResult Show(Window owner, string messageBoxText, string caption, MessageBoxButton button, MessageBoxImage icon, MessageBoxResult defaultResult, MessageBoxOptions options)
-```
-
-## ?? Visual Features
-
-### Custom Title Bar
-When `UseCustomTitleBar = true`:
-- Themed title bar using your preferred font
-- Close button with Persian tooltip (ÇäÕÑÇİ)
-- Drag-to-move functionality
-- Consistent with dialog theming
-
-### System Sounds
-- **Error/Stop**: Plays system error sound
-- **Warning/Exclamation**: Plays system warning sound
-- **Information/Question**: Silent (non-intrusive)
-
-### Focus Management
-- Automatically focuses OK/Yes buttons
-- Visible focus indicators (dotted border)
-- Proper keyboard navigation
-- Tab order follows RTL layout
-
-## ?? Usage Examples
-
-### Error Dialog
-```csharp
-RtlMessageBox.Show(
-    "İÇ?á ãæÑÏ äÙÑ ?ÇİÊ äÔÏ.",
-    "ÎØÇ",
-    MessageBoxButton.OK,
-    MessageBoxImage.Error);
-```
-
-### Confirmation Dialog
-```csharp
-var result = RtlMessageBox.Show(
-    "Â?Ç ã?ÎæÇå?Ï ÊÛ??ÑÇÊ ÑÇ ĞÎ?Ñå ˜ä?Ï¿",
-    "ĞÎ?Ñå ÊÛ??ÑÇÊ",
-    MessageBoxButton.YesNoCancel,
-    MessageBoxImage.Question);
-
-if (result == MessageBoxResult.Yes)
-{
-    // Save changes
-}
-else if (result == MessageBoxResult.No)
-{
-    // Discard changes
-}
-// Cancel = do nothing
-```
-
-### Information Dialog
-```csharp
-RtlMessageBox.Show(
-    "Úãá?ÇÊ ÈÇ ãæİŞ?Ê ÇäÌÇã ÔÏ.",
-    "ÇØáÇÚ",
-    MessageBoxButton.OK,
-    MessageBoxImage.Information);
-```
-
-### Warning Dialog
-```csharp
-var result = RtlMessageBox.Show(
-    "Ç?ä Úãá?ÇÊ ŞÇÈá ÈÇÒÔÊ ä?ÓÊ. ÇÏÇãå ã?Ïå?Ï¿",
-    "åÔÏÇÑ",
-    MessageBoxButton.OKCancel,
-    MessageBoxImage.Warning);
-```
-
-## ?? Technical Details
-
-### Implementation Features
-- **Pure WPF**: No dependencies on Windows Forms or Win32 APIs (except for icons)
+### ğŸ”§ Technical Features
+- **Drop-in Replacement**: Compatible with standard WPF MessageBox API
 - **No XAML**: Entirely code-based for easy distribution
 - **Theme Aware**: Respects system colors and themes
 - **Memory Efficient**: Proper resource cleanup and disposal
 - **Thread Safe**: Can be called from UI thread
 
-### Supported Icon Types
+### ğŸ¯ Supported Icon Types
 - `MessageBoxImage.Error` / `Hand` / `Stop` - Red X icon with error sound
 - `MessageBoxImage.Warning` / `Exclamation` - Yellow triangle with warning sound  
 - `MessageBoxImage.Information` / `Asterisk` - Blue "i" icon (silent)
 - `MessageBoxImage.Question` - Blue "?" icon (silent)
 - `MessageBoxImage.None` - No icon
 
-### Button Mappings
-- `MessageBoxButton.OK` ? "ÊÇ??Ï"
-- `MessageBoxButton.OKCancel` ? "ÊÇ??Ï", "ÇäÕÑÇİ"
-- `MessageBoxButton.YesNo` ? "Èáå", "Î?Ñ"
-- `MessageBoxButton.YesNoCancel` ? "Èáå", "Î?Ñ", "ÇäÕÑÇİ"
+### ğŸ”˜ Button Mappings
+- `MessageBoxButton.OK` â†’ "ØªØ§ÛŒÛŒØ¯"
+- `MessageBoxButton.OKCancel` â†’ "ØªØ§ÛŒÛŒØ¯", "Ø§Ù†ØµØ±Ø§Ù"
+- `MessageBoxButton.YesNo` â†’ "Ø¨Ù„Ù‡", "Ø®ÛŒØ±"
+- `MessageBoxButton.YesNoCancel` â†’ "Ø¨Ù„Ù‡", "Ø®ÛŒØ±", "Ø§Ù†ØµØ±Ø§Ù"
 
-## ?? Requirements
+## âš™ï¸ Requirements
 
-- **.NET 8.0-windows** or later
+- **.NET 6.0, 7.0, 8.0, or 9.0 (Windows)**
 - **WPF Application** target framework
 - **Windows 10/11** (for system icon loading)
 
-## ??? Integration
+## ğŸ› ï¸ Integration
 
 ### Add to Your WPF Project
 
 1. **Add Project Reference**:
    ```xml
-   <ProjectReference Include="path\to\Barnamenevis.Net.RtlMessageBox.Wpf.csproj" />
+   <ProjectReference Include="path\to\Barnamenevis.Net.RtlMessageBox.Wpf\Barnamenevis.Net.RtlMessageBox.Wpf.csproj" />
    ```
 
 2. **Update your code**:
@@ -216,7 +59,7 @@ var result = RtlMessageBox.Show(
    MessageBox.Show("Hello", "Title");
    
    // With this:
-   RtlMessageBox.Show("ÓáÇã", "ÚäæÇä");
+   RtlMessageBox.Show("Ø³Ù„Ø§Ù…", "Ø¹Ù†ÙˆØ§Ù†");
    ```
 
 3. **Configure fonts** (optional):
@@ -226,7 +69,52 @@ var result = RtlMessageBox.Show(
    RtlMessageBox.PreferredFontPointSize = 11;
    ```
 
-## ?? Best Practices
+## ğŸš€ Quick Start Examples
+
+### Basic Usage
+```csharp
+using Barnamenevis.Net.RtlMessageBox.Wpf;
+
+// Simple information message
+var result = RtlMessageBox.Show("Ø¹Ù…Ù„ÛŒØ§Øª Ø¨Ø§ Ù…ÙˆÙÙ‚ÛŒØª Ø§Ù†Ø¬Ø§Ù… Ø´Ø¯.", "Ù…ÙˆÙÙ‚ÛŒØª");
+
+// Error message
+var result = RtlMessageBox.Show(
+    "Ø®Ø·Ø§ Ø¯Ø± Ø§ØªØµØ§Ù„ Ø¨Ù‡ Ù¾Ø§ÛŒÚ¯Ø§Ù‡ Ø¯Ø§Ø¯Ù‡ Ø±Ø® Ø¯Ø§Ø¯.",
+    "Ø®Ø·Ø§",
+    MessageBoxButton.OK,
+    MessageBoxImage.Error);
+
+// Confirmation dialog
+var result = RtlMessageBox.Show(
+    "Ø¢ÛŒØ§ Ù…Ø·Ù…Ø¦Ù† Ù‡Ø³ØªÛŒØ¯ Ú©Ù‡ Ù…ÛŒâ€ŒØ®ÙˆØ§Ù‡ÛŒØ¯ Ø§ÛŒÙ† ÙØ§ÛŒÙ„ Ø±Ø§ Ø­Ø°Ù Ú©Ù†ÛŒØ¯ØŸ",
+    "ØªØ£ÛŒÛŒØ¯ Ø­Ø°Ù",
+    MessageBoxButton.YesNo,
+    MessageBoxImage.Question);
+
+if (result == MessageBoxResult.Yes)
+{
+    // Perform delete operation
+    DeleteFile();
+}
+```
+
+### Advanced Configuration
+```csharp
+// In App.xaml.cs
+protected override void OnStartup(StartupEventArgs e)
+{
+    // Configure Persian fonts
+    RtlMessageBox.PreferredFontName = "Vazirmatn FD";
+    RtlMessageBox.PreferredFontPointSize = 12;
+    RtlMessageBox.UseCustomTitleBar = true;
+    RtlMessageBox.ApplyCustomFont = true;
+    
+    base.OnStartup(e);
+}
+```
+
+## ğŸ“– Best Practices
 
 1. **Font Setup**: Use Persian fonts like Vazirmatn for optimal typography
 2. **Owner Windows**: Always specify owner windows for modal behavior
@@ -234,7 +122,7 @@ var result = RtlMessageBox.Show(
 4. **Text Length**: Keep messages concise; the dialog will auto-size
 5. **Default Buttons**: Let the library handle default button selection for better UX
 
-## ?? Integration with FontInstaller
+## ğŸ”— Integration with FontInstaller
 
 This library works seamlessly with `Barnamenevis.Net.Tools.FontInstaller`:
 
@@ -243,7 +131,11 @@ This library works seamlessly with `Barnamenevis.Net.Tools.FontInstaller`:
 protected override void OnStartup(StartupEventArgs e)
 {
     // Install fonts first
-    FontInstaller.InstallApplicationFonts();
+    var installedCount = FontInstaller.InstallApplicationFonts();
+    if (installedCount > 0)
+    {
+        Console.WriteLine($"âœ… Ù†ØµØ¨ Ø´Ø¯ {installedCount} ÙÙˆÙ†Øª Ø¬Ø¯ÛŒØ¯");
+    }
     
     // Configure RtlMessageBox to use installed font
     RtlMessageBox.PreferredFontName = "Vazirmatn FD";
@@ -253,7 +145,49 @@ protected override void OnStartup(StartupEventArgs e)
 }
 ```
 
-## ?? See Also
+## ğŸ¨ Customization Options
 
-- [FontInstaller Documentation](../Barnamenevis.Net.FontInstaller/README.md) - Font installation utilities
+### Font Customization
+```csharp
+// Set Persian font
+RtlMessageBox.PreferredFontName = "Vazirmatn FD";
+RtlMessageBox.PreferredFontPointSize = 11;
+
+// Enable custom title bar
+RtlMessageBox.UseCustomTitleBar = true;
+
+// Apply font to all elements
+RtlMessageBox.ApplyCustomFont = true;
+```
+
+### Theme Integration
+```csharp
+// The MessageBox automatically adapts to system theme
+// Dark mode, light mode, and high contrast themes are supported
+var result = RtlMessageBox.Show(
+    "Ø§ÛŒÙ† Ù¾ÛŒØºØ§Ù… Ø¨Ø§ ØªÙ… Ø³ÛŒØ³ØªÙ… Ø³Ø§Ø²Ú¯Ø§Ø± Ø§Ø³Øª.",
+    "Ø³Ø§Ø²Ú¯Ø§Ø±ÛŒ ØªÙ…",
+    MessageBoxButton.OK,
+    MessageBoxImage.Information);
+```
+
+## ğŸ—ï¸ Technical Architecture
+
+### Component Structure
+- **RtlMessageBox**: Main static class with Show methods
+- **RtlMessageBoxWindow**: Custom WPF Window implementation
+- **PersianButtonManager**: Handles button text translation
+- **FontManager**: Manages font detection and application
+- **SoundManager**: Handles system sound integration
+
+### Memory Management
+- Automatic resource cleanup
+- Proper disposal of font resources
+- Efficient window lifecycle management
+- No memory leaks in repeated usage
+
+## ğŸ“š See Also
+
+- [Barnamenevis.Net.Tools Documentation](../Barnamenevis.Net.FontInstaller/README.md) - Font installation utilities
 - [Windows Forms RTL MessageBox](../Barnamenevis.Net.RtlMessageBox.WindowsForms/README.md) - Windows Forms version
+- [WPF Demo Application](../Barnamenevis.Net.RtlMessageBox.Wpf.Demo/README.md) - Complete usage examples

@@ -1,32 +1,32 @@
-# Barnamenevis.Net.RtlMessageBox.WindowsForms
+ï»¿# Barnamenevis.Net.RtlMessageBox.WindowsForms
 
 A Windows Forms-compatible RTL MessageBox implementation that wraps the native Win32 MessageBox with automatic Persian button text translation and custom font support.
 
-## ?? Overview
+## ğŸ“‹ Overview
 
 This library provides a drop-in replacement for the standard Windows Forms MessageBox with full RTL (Right-to-Left) support, automatic Persian button translation, and custom font integration. It uses Win32 hooks to modify the native MessageBox at runtime, ensuring compatibility with all Windows MessageBox features.
 
-## ? Key Features
+## âœ¨ Key Features
 
-### ?? RTL & Persian Support
-- **Automatic Persian Button Text**: OK?ÊÇ??Ï, Cancel?ÇäÕÑÇİ, Yes?Èáå, No?Î?Ñ, etc.
+### ğŸŒ RTL & Persian Support
+- **Automatic Persian Button Text**: OKâ†’ØªØ§ÛŒÛŒØ¯, Cancelâ†’Ø§Ù†ØµØ±Ø§Ù, Yesâ†’Ø¨Ù„Ù‡, Noâ†’Ø®ÛŒØ±, etc.
 - **RTL Layout Options**: Proper right-to-left reading and alignment
 - **Win32 Integration**: Uses native Windows MessageBox with custom modifications
 - **Complete API Compatibility**: Drop-in replacement for System.Windows.MessageBox
 
-### ?? Font Management
+### ğŸ¨ Font Management
 - **Custom Font Application**: Apply Persian fonts to all dialog elements
 - **Runtime Font Configuration**: Configure font family and size
 - **Automatic Font Detection**: Works with installed Persian fonts
 - **Focus Management**: Proper keyboard navigation and default button handling
 
-### ?? Visual Features
+### ğŸŒŸ Visual Features
 - **Native Windows Theming**: Respects system theme and appearance
 - **System Icon Support**: Standard Windows icons with proper scaling
 - **Focus Indicators**: Clear visual focus cues for keyboard navigation
 - **Default Button Logic**: Smart default button selection (OK/Yes preferred)
 
-## ?? Quick Start
+## ğŸš€ Quick Start
 
 ### Basic Usage
 
@@ -34,15 +34,15 @@ This library provides a drop-in replacement for the standard Windows Forms Messa
 using Barnamenevis.Net.RtlMessageBox.WindowsForms;
 
 // Simple message
-var result = RtlMessageBox.Show("ÓáÇã Ïä?Ç!");
+var result = RtlMessageBox.Show("Ø³Ù„Ø§Ù… Ø¯Ù†ÛŒØ§!");
 
 // With title
-var result = RtlMessageBox.Show("?ÛÇã ÔãÇ ÇÑÓÇá ÔÏ.", "ãæİŞ?Ê");
+var result = RtlMessageBox.Show("Ù¾ÙŠØºØ§Ù… Ø´Ù…Ø§ Ø§Ø±Ø³Ø§Ù„ Ø´Ø¯.", "Ù…ÙˆÙÙ‚ÛŒØª");
 
 // Yes/No question
 var result = RtlMessageBox.Show(
-    "Â?Ç ãØãÆä åÓÊ?Ï ˜å ã?ÎæÇå?Ï ÇÏÇãå Ïå?Ï¿",
-    "ÊÃ??Ï Úãá?ÇÊ",
+    "Ø¢ÛŒØ§ Ù…Ø·Ù…Ø¦Ù† Ù‡Ø³ØªÛŒØ¯ Ú©Ù‡ Ù…ÛŒâ€ŒØ®ÙˆØ§Ù‡ÛŒØ¯ Ø§Ø¯Ø§Ù…Ù‡ Ø¯Ù‡ÛŒØ¯ØŸ",
+    "ØªØ£ÛŒÛŒØ¯ Ø¹Ù…Ù„ÛŒØ§Øª",
     MessageBoxButton.YesNo,
     MessageBoxImage.Question);
 ```
@@ -56,10 +56,10 @@ RtlMessageBox.PreferredFontPointSize = 10.0;
 RtlMessageBox.ApplyCustomFont = true;
 
 // Now all MessageBoxes will use the custom font
-var result = RtlMessageBox.Show("Ç?ä ãÊä ÈÇ İæäÊ ÏáÎæÇå äãÇ?Ô ÏÇÏå ã?ÔæÏ.");
+var result = RtlMessageBox.Show("Ø§ÛŒÙ† Ù…ØªÙ† Ø¨Ø§ ÙÙˆÙ†Øª Ø¯Ù„Ø®ÙˆØ§Ù‡ Ù†Ù…Ø§ÛŒØ´ Ø¯Ø§Ø¯Ù‡ Ù…ÛŒâ€ŒØ´ÙˆØ¯.");
 ```
 
-## ?? API Reference
+## API Reference
 
 ### Static Properties
 
@@ -93,7 +93,7 @@ MessageBoxResult Show(Window owner, string messageBoxText, string caption, Messa
 MessageBoxResult Show(Window owner, string messageBoxText, string caption, MessageBoxButton button, MessageBoxImage icon, MessageBoxResult defaultResult, MessageBoxOptions options)
 ```
 
-## ?? Technical Implementation
+## âš™ï¸ Technical Implementation
 
 ### Win32 Hook Mechanism
 The library uses a **CBT (Computer-Based Training) Hook** to intercept MessageBox creation:
@@ -119,17 +119,17 @@ private static IntPtr CreateDialogFont(string faceName, double pointSize)
 ### Button Mapping Table
 | Button ID | Persian Text | English Equivalent |
 |-----------|-------------|-------------------|
-| IDOK (1) | ÊÇ??Ï | OK |
-| IDCANCEL (2) | ÇäÕÑÇİ | Cancel |
-| IDYES (6) | Èáå | Yes |
-| IDNO (7) | Î?Ñ | No |
-| IDRETRY (4) | ÊáÇÔ ãÌÏÏ | Retry |
-| IDIGNORE (5) | äÇÏ?Ïå ÑİÊä | Ignore |
-| IDABORT (3) | ŞØÚ | Abort |
-| IDTRYAGAIN (10) | ÊáÇÔ ãÌÏÏ | Try Again |
-| IDCONTINUE (11) | ÇÏÇãå | Continue |
+| IDOK (1) | ØªØ§ÛŒÛŒØ¯ | OK |
+| IDCANCEL (2) | Ø§Ù†ØµØ±Ø§Ù | Cancel |
+| IDYES (6) | Ø¨Ù„Ù‡ | Yes |
+| IDNO (7) | Ø®ÛŒØ± | No |
+| IDRETRY (4) | ØªÙ„Ø§Ø´ Ù…Ø¬Ø¯Ø¯ | Retry |
+| IDIGNORE (5) | Ù†Ø§Ø¯ÛŒØ¯Ù‡ Ú¯Ø±ÙØªÙ† | Ignore |
+| IDABORT (3) | Ù‚Ø·Ø¹ | Abort |
+| IDTRYAGAIN (10) | ØªÙ„Ø§Ø´ Ù…Ø¬Ø¯Ø¯ | Try Again |
+| IDCONTINUE (11) | Ø§Ø¯Ø§Ù…Ù‡ | Continue |
 
-## ?? Usage Examples
+## âœ… Usage Examples
 
 ### Error Handling
 ```csharp
@@ -141,8 +141,8 @@ try
 catch (Exception ex)
 {
     RtlMessageBox.Show(
-        $"ÎØÇ ÏÑ ÇäÌÇã Úãá?ÇÊ: {ex.Message}",
-        "ÎØÇ",
+        $"Ø®Ø·Ø§ Ø¯Ø± Ø§Ù†Ø¬Ø§Ù… Ø¹Ù…Ù„ÛŒØ§Øª: {ex.Message}",
+        "Ø®Ø·Ø§",
         MessageBoxButton.OK,
         MessageBoxImage.Error);
 }
@@ -153,8 +153,8 @@ catch (Exception ex)
 private void DeleteButton_Click(object sender, EventArgs e)
 {
     var result = RtlMessageBox.Show(
-        "Â?Ç ãØãÆä åÓÊ?Ï ˜å ã?ÎæÇå?Ï Ç?ä İÇ?á ÑÇ ÍĞİ ˜ä?Ï¿\nÇ?ä Úãá?ÇÊ ŞÇÈá ÈÇÒÔÊ ä?ÓÊ.",
-        "ÊÃ??Ï ÍĞİ",
+        "Ø¢ÛŒØ§ Ù…Ø·Ù…Ø¦Ù† Ù‡Ø³ØªÛŒØ¯ Ú©Ù‡ Ù…ÛŒâ€ŒØ®ÙˆØ§Ù‡ÛŒØ¯ Ø§ÛŒÙ† ÙØ§ÛŒÙ„ Ø±Ø§ Ø­Ø°Ù Ú©Ù†ÛŒØ¯ØŸ\nØ§ÛŒÙ† Ø¹Ù…Ù„ÛŒØ§Øª Ù‚Ø§Ø¨Ù„ Ø¨Ø§Ø²Ú¯Ø´Øª Ù†ÛŒØ³Øª.",
+        "ØªØ£ÛŒÛŒØ¯ Ø­Ø°Ù",
         MessageBoxButton.YesNo,
         MessageBoxImage.Warning);
     
@@ -172,8 +172,8 @@ private void FormClosing_Handler(object sender, FormClosingEventArgs e)
     if (HasUnsavedChanges)
     {
         var result = RtlMessageBox.Show(
-            "ÊÛ??ÑÇÊ ĞÎ?Ñå äÔÏåÇ? æÌæÏ ÏÇÑÏ. Â?Ç ã?ÎæÇå?Ï ÂäåÇ ÑÇ ĞÎ?Ñå ˜ä?Ï¿",
-            "ĞÎ?Ñå ÊÛ??ÑÇÊ",
+            "ØªØºÛŒÛŒØ±Ø§Øª Ø°Ø®ÛŒØ±Ù‡ Ù†Ø´Ø¯Ù‡â€ŒØ§ÛŒ ÙˆØ¬ÙˆØ¯ Ø¯Ø§Ø±Ø¯. Ø¢ÛŒØ§ Ù…ÛŒâ€ŒØ®ÙˆØ§Ù‡ÛŒØ¯ Ø¢Ù†â€ŒÙ‡Ø§ Ø±Ø§ Ø°Ø®ÛŒØ±Ù‡ Ú©Ù†ÛŒØ¯ØŸ",
+            "Ø°Ø®ÛŒØ±Ù‡ ØªØºÛŒÛŒØ±Ø§Øª",
             MessageBoxButton.YesNoCancel,
             MessageBoxImage.Question);
         
@@ -198,14 +198,14 @@ private void FormClosing_Handler(object sender, FormClosingEventArgs e)
 private void ShowAbout()
 {
     RtlMessageBox.Show(
-        "äÑãÇİÒÇÑ ãÏ?Ñ?Ê İÇ?á\näÓÎå 1.0.0\n\nÊæÓÚå ?ÇİÊå ÊæÓØ Ê?ã ÈÑäÇãåäæ?Ó",
-        "ÏÑÈÇÑå ÈÑäÇãå",
+        "Ù†Ø±Ù…â€ŒØ§ÙØ²Ø§Ø± Ù…Ø¯ÛŒØ±ÛŒØª ÙØ§ÛŒÙ„\nÙ†Ø³Ø®Ù‡ 1.0.0\n\nØªÙˆØ³Ø¹Ù‡ ÛŒØ§ÙØªÙ‡ ØªÙˆØ³Ø· ØªÛŒÙ… Ø¨Ø±Ù†Ø§Ù…Ù‡â€ŒÙ†ÙˆÛŒØ³",
+        "Ø¯Ø±Ø¨Ø§Ø±Ù‡ Ø¨Ø±Ù†Ø§Ù…Ù‡",
         MessageBoxButton.OK,
         MessageBoxImage.Information);
 }
 ```
 
-## ??? Integration with Windows Forms
+## ğŸŒˆ Integration with Windows Forms
 
 ### Form Designer Integration
 This library works perfectly with Windows Forms Designer-created applications:
@@ -225,7 +225,7 @@ public partial class MainForm : Form
     private void saveButton_Click(object sender, EventArgs e)
     {
         // Use RTL MessageBox instead of standard MessageBox
-        RtlMessageBox.Show("İÇ?á ÈÇ ãæİŞ?Ê ĞÎ?Ñå ÔÏ.", "ãæİŞ?Ê");
+        RtlMessageBox.Show("ÙØ§ÛŒÙ„ Ø¨Ø§ Ù…ÙˆÙÙ‚ÛŒØª Ø°Ø®ÛŒØ±Ù‡ Ø´Ø¯.", "Ù…ÙˆÙÙ‚ÛŒØª");
     }
 }
 ```
@@ -249,13 +249,13 @@ static void Main()
 }
 ```
 
-## ?? Requirements
+## ğŸ“¦ Requirements
 
 - **.NET 8.0-windows** or later
 - **Windows Forms** application
 - **Windows 10/11** (Win32 API dependencies)
 
-## ?? Advanced Features
+## âš¡ Advanced Features
 
 ### Custom Default Button Logic
 The library implements smart default button selection:
@@ -279,7 +279,7 @@ private static MessageBoxOptions AddRtl(MessageBoxOptions options)
 }
 ```
 
-## ?? Integration with FontInstaller
+## ğŸ¤ Integration with FontInstaller
 
 Works seamlessly with the FontInstaller utility:
 
@@ -306,14 +306,14 @@ static void Main()
 }
 ```
 
-## ?? Important Notes
+## âš ï¸ Important Notes
 
 1. **Thread Safety**: The hook is installed per thread, making it safe for multi-threaded applications
 2. **Font Requirements**: Custom fonts must be installed on the system or installed via FontInstaller
 3. **Compatibility**: Works with all Windows versions that support the Win32 MessageBox API
 4. **Performance**: Minimal overhead - hooks are only active during MessageBox display
 
-## ?? See Also
+## ğŸ”— See Also
 
 - [FontInstaller Documentation](../Barnamenevis.Net.FontInstaller/README.md) - Font installation utilities
 - [WPF RTL MessageBox](../Barnamenevis.Net.RtlMessageBox.Wpf/README.md) - WPF version with additional theming

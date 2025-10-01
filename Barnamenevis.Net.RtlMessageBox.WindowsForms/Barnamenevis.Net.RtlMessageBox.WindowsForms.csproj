@@ -17,8 +17,8 @@
     <Description>A Windows Forms RTL MessageBox implementation that wraps native Win32 MessageBox with automatic Persian/Arabic button text translation and custom font support. Uses Win32 hooks for real-time button translation while maintaining full compatibility with standard MessageBox API.</Description>
     <Summary>RTL-enabled Windows Forms MessageBox with Persian/Arabic support using Win32 hooks</Summary>
     <PackageTags>WindowsForms;MessageBox;RTL;Persian;Arabic;Farsi;RightToLeft;Win32;Dialog;Localization;Persian-UI;Arabic-UI;WinForms</PackageTags>
-    <PackageProjectUrl>https://github.com/yourusername/RtlMessageBox</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/yourusername/RtlMessageBox</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/delphiassistant/Barnamenevis.Net.Tools</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/delphiassistant/Barnamenevis.Net.Tools</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>

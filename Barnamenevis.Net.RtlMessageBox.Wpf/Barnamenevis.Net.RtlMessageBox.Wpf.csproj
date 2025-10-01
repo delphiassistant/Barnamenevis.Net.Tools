@@ -16,8 +16,8 @@
     <Description>A pure WPF implementation of RTL-enabled MessageBox with Persian/Arabic language support, custom theming, and automatic Persian button text translation. Features themed UI, custom title bars, system sound integration, and proper RTL layout for Persian and Arabic applications.</Description>
     <Summary>RTL-enabled WPF MessageBox with Persian/Arabic support and custom theming</Summary>
     <PackageTags>WPF;MessageBox;RTL;Persian;Arabic;Farsi;RightToLeft;UI;Dialog;Localization;Persian-UI;Arabic-UI</PackageTags>
-    <PackageProjectUrl>https://github.com/yourusername/RtlMessageBox</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/yourusername/RtlMessageBox</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/delphiassistant/Barnamenevis.Net.Tools</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/delphiassistant/Barnamenevis.Net.Tools</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>

@@ -1,8 +1,8 @@
-# Fonts Directory - Persian Typography for RTL MessageBox
+﻿# Fonts Directory - Persian Typography for RTL MessageBox
 
 This directory is automatically scanned at application startup to install fonts for the **current user only** (no administrator privileges required). It serves as the central location for Persian and Arabic fonts used by the RtlMessageBox demonstrations.
 
-## ?? Overview
+## 📋 Overview
 
 The Fonts directory provides:
 - **Automatic Font Detection**: Scanned recursively for all supported font formats
@@ -10,19 +10,19 @@ The Fonts directory provides:
 - **Seamless Integration**: Automatically configures RtlMessageBox libraries
 - **Fallback Support**: Graceful degradation if fonts cannot be installed
 
-## ?? Supported Font Formats
+## 📝 Supported Font Formats
 
 | Extension | Format | Description | Support Level |
 |-----------|--------|-------------|---------------|
-| `.ttf` | TrueType Font | Most common desktop font format | Full ? |
-| `.otf` | OpenType Font | Advanced typography features | Full ? |
-| `.woff` | Web Open Font Format | Web-optimized compression | Limited ?? |
-| `.woff2` | Web Open Font Format 2 | Modern web font format | Limited ?? |
-| `.eot` | Embedded OpenType | Legacy web font format | Limited ?? |
+| `.ttf` | TrueType Font | Most common desktop font format | Full ✅ |
+| `.otf` | OpenType Font | Advanced typography features | Full ✅ |
+| `.woff` | Web Open Font Format | Web-optimized compression | Limited ⚠️ |
+| `.woff2` | Web Open Font Format 2 | Modern web font format | Limited ⚠️ |
+| `.eot` | Embedded OpenType | Legacy web font format | Limited ⚠️ |
 
 **Recommendation**: Use `.ttf` or `.otf` formats for best compatibility with Windows applications.
 
-## ?? Per-User Installation Details
+## 👤 Per-User Installation Details
 
 ### Installation Location
 Fonts are installed to the current user's local directory:
@@ -38,13 +38,13 @@ HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts
 ```
 
 ### Key Benefits
-- ? **No Administrator Privileges Required**
-- ? **No UAC Prompts or Elevation**
-- ? **Fonts Persist After Application Closes**
-- ? **Available to Current User's Applications**
-- ? **Other Users on Same Computer Unaffected**
+- ✅ **No Administrator Privileges Required**
+- ✅ **No UAC Prompts or Elevation**
+- ✅ **Fonts Persist After Application Closes**
+- ✅ **Available to Current User's Applications**
+- ✅ **Other Users on Same Computer Unaffected**
 
-## ?? Usage Instructions
+## 🛠️ Usage Instructions
 
 ### 1. Adding Fonts to Your Project
 
@@ -56,13 +56,13 @@ HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts
 **Place fonts in this directory**:
 ```
 Barnamenevis.Net.RtlMessageBox.Wpf.Demo/
-??? Fonts/
-    ??? Vazirmatn-FD-Regular.ttf
-    ??? Vazirmatn-FD-Bold.ttf
-    ??? Vazirmatn-FD-Light.ttf
-    ??? Vazirmatn-FD-Medium.ttf
-    ??? Subdirectories/          # Also scanned recursively
-        ??? MoreFonts.otf
+└── Fonts/
+    ├── Vazirmatn-FD-Regular.ttf
+    ├── Vazirmatn-FD-Bold.ttf
+    ├── Vazirmatn-FD-Light.ttf
+    ├── Vazirmatn-FD-Medium.ttf
+    └── Subdirectories/          # Also scanned recursively
+        └── MoreFonts.otf
 ```
 
 ### 2. Automatic Installation Process
@@ -81,8 +81,8 @@ When you run the application:
 
 ```
 === WPF MessageBox Application Starting ===
-Application directory: C:\...\bin\Debug\net8.0-windows\
-Fonts directory: C:\...\bin\Debug\net8.0-windows\Fonts
+Application directory: C:\...\bin\Debug\net9.0-windows\
+Fonts directory: C:\...\bin\Debug\net9.0-windows\Fonts
 User fonts directory: C:\Users\[YourName]\AppData\Local\Microsoft\Windows\Fonts
 
 --- Starting Font Installation ---
@@ -91,13 +91,13 @@ FontInstaller: Found font file: Vazirmatn-FD-Regular.ttf
 FontInstaller: Found font file: Vazirmatn-FD-Bold.ttf
 FontInstaller: Installed font for current user: Vazirmatn-FD-Regular.ttf
 FontInstaller: Installed font for current user: Vazirmatn-FD-Bold.ttf
-? Successfully installed 2 new font(s) for current user
+✅ Successfully installed 2 new font(s) for current user
 --- Font Installation Complete ---
 
-?? Application ready - you can now test the message boxes!
+🎉 Application ready - you can now test the message boxes!
 ```
 
-## ?? Testing Font Installation
+## 🔍 Testing Font Installation
 
 ### Testing with Real Fonts
 
@@ -138,7 +138,7 @@ FontInstaller: Installed font for current user: Vazirmatn-FD-Bold.ttf
    - Open any MessageBox dialog
    - Text should appear in the custom Persian font
 
-## ??? Project Configuration
+## 🔧 Project Configuration
 
 ### Required .csproj Settings
 
@@ -148,7 +148,7 @@ The project must be configured to copy font files to the output directory:
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
@@ -172,13 +172,13 @@ The project must be configured to copy font files to the output directory:
 
 ```
 Source:     Fonts/Vazirmatn-FD-Regular.ttf
-            ? (Build Process)
-Output:     bin/Debug/net8.0-windows/Fonts/Vazirmatn-FD-Regular.ttf
-            ? (Runtime Installation)
+            ↓ (Build Process)
+Output:     bin/Debug/net9.0-windows/Fonts/Vazirmatn-FD-Regular.ttf
+            ↓ (Runtime Installation)
 System:     %LOCALAPPDATA%/Microsoft/Windows/Fonts/Vazirmatn-FD-Regular.ttf
 ```
 
-## ?? Font Recommendations
+## 🎯 Font Recommendations
 
 ### Primary Recommendation: Vazirmatn FD
 - **Source**: https://rastikerdar.github.io/vazirmatn/
@@ -193,25 +193,25 @@ System:     %LOCALAPPDATA%/Microsoft/Windows/Fonts/Vazirmatn-FD-Regular.ttf
 - **Tanha**: Minimalist Persian design
 
 ### Font Selection Criteria
-- ? **Unicode Support**: Complete Persian/Arabic character coverage
-- ? **Readability**: Clear at small sizes (9-12pt)
-- ? **License**: Compatible with application distribution
-- ? **File Size**: Reasonable for bundling with applications
-- ? **Maintenance**: Actively maintained and updated
+- ✅ **Unicode Support**: Complete Persian/Arabic character coverage
+- ✅ **Readability**: Clear at small sizes (9-12pt)
+- ✅ **License**: Compatible with application distribution
+- ✅ **File Size**: Reasonable for bundling with applications
+- ✅ **Maintenance**: Actively maintained and updated
 
-## ?? Advanced Configuration
+## 🔧 Advanced Configuration
 
 ### Custom Font Directory Structure
 ```
 Fonts/
-??? Persian/
-?   ??? Vazirmatn-FD-Regular.ttf
-?   ??? Vazirmatn-FD-Bold.ttf
-?   ??? Vazirmatn-FD-Light.ttf
-??? Arabic/
-?   ??? NotoSansArabic-Regular.ttf
-??? Fallback/
-    ??? DejaVuSans.ttf
+├── Persian/
+│   ├── Vazirmatn-FD-Regular.ttf
+│   ├── Vazirmatn-FD-Bold.ttf
+│   └── Vazirmatn-FD-Light.ttf
+├── Arabic/
+│   └── NotoSansArabic-Regular.ttf
+└── Fallback/
+    └── DejaVuSans.ttf
 ```
 
 ### Font Configuration in Code
@@ -236,7 +236,7 @@ public static void ConfigureFonts()
     
     if (installedCount > 0)
     {
-        Console.WriteLine($"? Installed {installedCount} Persian fonts");
+        Console.WriteLine($"✅ Installed {installedCount} Persian fonts");
         
         // Primary configuration
         RtlMessageBox.PreferredFontName = "Vazirmatn FD";
@@ -244,19 +244,19 @@ public static void ConfigureFonts()
     }
     else if (IsFontInstalled("Vazirmatn FD"))
     {
-        Console.WriteLine("?? Using previously installed Vazirmatn FD");
+        Console.WriteLine("ℹ️ Using previously installed Vazirmatn FD");
         RtlMessageBox.PreferredFontName = "Vazirmatn FD";
     }
     else
     {
-        Console.WriteLine("?? No Persian fonts available, using system fonts");
+        Console.WriteLine("⚠️ No Persian fonts available, using system fonts");
         RtlMessageBox.PreferredFontName = "Tahoma";
         RtlMessageBox.UseCustomTitleBar = false;
     }
 }
 ```
 
-## ?? Troubleshooting
+## 🔍 Troubleshooting
 
 ### Common Issues and Solutions
 
@@ -265,9 +265,9 @@ public static void ConfigureFonts()
 FontInstaller: No font files found in directory
 ```
 **Causes & Solutions**:
-- Font files not in Fonts directory ? Add .ttf/.otf files
-- Build not copying files ? Check .csproj configuration
-- Incorrect file extensions ? Ensure files are .ttf, .otf, etc.
+- Font files not in Fonts directory → Add .ttf/.otf files
+- Build not copying files → Check .csproj configuration
+- Incorrect file extensions → Ensure files are .ttf, .otf, etc.
 
 #### Permission Errors
 ```
@@ -280,9 +280,9 @@ Access denied when installing fonts
 MessageBox still shows system font
 ```
 **Causes & Solutions**:
-- Font name mismatch ? Check exact font family name
-- `ApplyCustomFont = false` ? Set to `true`
-- Font installation failed ? Check console output for errors
+- Font name mismatch → Check exact font family name
+- `ApplyCustomFont = false` → Set to `true`
+- Font installation failed → Check console output for errors
 
 #### Registry Issues
 ```
@@ -292,21 +292,6 @@ Font installed but not appearing in applications
 - Restart the application
 - Check Windows font cache
 - Verify registry entries in `HKEY_CURRENT_USER\...\Fonts`
-
-#### No fonts installed
-- Ensure `.ttf` files are in the `Fonts` directory
-- Check .csproj file has proper copy configuration
-- Verify build process copies files to output directory
-
-#### Permission errors
-- Per-user installation shouldn't need admin rights
-- Check user profile permissions
-- Verify %LOCALAPPDATA% is accessible
-
-#### Font not visible
-- Restart applications or check user-specific font registry
-- Check font name spelling in configuration
-- Verify font actually installed successfully
 
 ### Debug Information
 
@@ -318,7 +303,7 @@ FontInstaller: Font already installed: example.ttf (skipped)
 FontInstaller: Installed font for current user: newFont.ttf
 ```
 
-## ?? Best Practices
+## 💡 Best Practices
 
 ### Development
 1. **Include Sample Fonts**: Provide at least one Persian font for testing
@@ -338,7 +323,7 @@ FontInstaller: Installed font for current user: newFont.ttf
 3. **Cleanup**: Provide uninstall functionality if needed
 4. **Documentation**: Keep font sources and licenses documented
 
-## ?? Related Resources
+## 🔗 Related Resources
 
 - **Vazirmatn Font Family**: https://rastikerdar.github.io/vazirmatn/
 - **Persian Typography**: https://github.com/Persian-Typographic
@@ -348,7 +333,7 @@ FontInstaller: Installed font for current user: newFont.ttf
 
 ---
 
-## ?? Quick Reference
+## 📚 Quick Reference
 
 ### Essential Commands
 ```bash

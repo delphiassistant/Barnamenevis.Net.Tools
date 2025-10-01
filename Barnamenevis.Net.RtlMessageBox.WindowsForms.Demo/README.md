@@ -1,8 +1,8 @@
-# Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo
+ï»¿# Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo
 
 A Windows Forms demonstration application showcasing the RTL MessageBox library with designer-based UI, Persian language support, and comprehensive MessageBox scenarios.
 
-## ?? Overview
+## ğŸ“‹ Overview
 
 This demo application demonstrates the `Barnamenevis.Net.RtlMessageBox.WindowsForms` library capabilities including:
 - Native Win32 MessageBox with RTL support and Persian button text
@@ -11,9 +11,9 @@ This demo application demonstrates the `Barnamenevis.Net.RtlMessageBox.WindowsFo
 - Custom font integration with Persian typography
 - Best practices for RTL Windows Forms development
 
-## ? Features Demonstrated
+## âœ¨ Features Demonstrated
 
-### ?? RTL MessageBox Scenarios
+### ğŸŒ RTL MessageBox Scenarios
 - **Simple OK Dialog**: Basic information display with Persian text
 - **OK/Cancel + Warning**: Warning prompts with dual options
 - **Yes/No + Question**: User confirmation dialogs
@@ -21,22 +21,22 @@ This demo application demonstrates the `Barnamenevis.Net.RtlMessageBox.WindowsFo
 - **Information Dialog**: Standard information messages
 - **Cancel/Retry + Stop**: Operation control scenarios
 
-### ?? Technical Features
+### ğŸ”§ Technical Features
 - **Designer-Generated UI**: Proper separation of UI design and business logic
 - **Win32 Hook Integration**: Real-time button text translation during MessageBox display
 - **Custom Font Application**: Applies Persian fonts to all dialog elements
 - **RTL Layout Options**: Automatic RTL reading and right-align options
 - **Focus Management**: Proper default button selection and keyboard navigation
 
-### ?? UI Architecture
+### ğŸ¨ UI Architecture
 - **MainForm.Designer.cs**: Contains all UI element declarations and layout
 - **MainForm.cs**: Contains business logic and event handlers
 - **Designer Integration**: Fully compatible with Visual Studio Windows Forms Designer
 
-## ?? Running the Demo
+## ğŸš€ Running the Demo
 
 ### Prerequisites
-- **.NET 8.0 SDK** or later
+- **.NET 6.0, 7.0, 8.0, or 9.0 SDK**
 - **Windows 10/11**
 - **Visual Studio 2022** (recommended for designer support)
 
@@ -44,8 +44,8 @@ This demo application demonstrates the `Barnamenevis.Net.RtlMessageBox.WindowsFo
 
 1. **Clone and Build**:
    ```bash
-   git clone <repository-url>
-   cd RtlMessageBox
+   git clone https://github.com/delphiassistant/Barnamenevis.Net.Tools.git
+   cd Barnamenevis.Net.Tools
    dotnet build
    ```
 
@@ -59,7 +59,7 @@ This demo application demonstrates the `Barnamenevis.Net.RtlMessageBox.WindowsFo
    - Set as startup project
    - Press F5 or click Start
 
-## ?? Demo Application Features
+## ğŸŒŸ Demo Application Features
 
 ### Main Window Layout
 The demo features a clean, grid-based layout with:
@@ -72,8 +72,8 @@ The demo features a clean, grid-based layout with:
 #### 1. OK Dialog
 ```csharp
 var result = RtlMessageBox.Show(
-    "Ç?ä ?˜ ?Çã äãæäå ÇÓÊ.", 
-    "?ÛÇã", 
+    "Ø§ÛŒÙ† ÛŒÚ© Ù¾ÛŒØ§Ù… Ù†Ù…ÙˆÙ†Ù‡ Ø§Ø³Øª.", 
+    "Ù¾ÛŒØºØ§Ù…", 
     MessageBoxButton.OK, 
     MessageBoxImage.None);
 ```
@@ -81,8 +81,8 @@ var result = RtlMessageBox.Show(
 #### 2. OK/Cancel + Warning
 ```csharp
 var result = RtlMessageBox.Show(
-    "Â?Ç ÇÏÇãå ã?Ïå?Ï¿", 
-    "åÔÏÇÑ", 
+    "Ø¢ÛŒØ§ Ø§Ø¯Ø§Ù…Ù‡ Ù…ÛŒâ€ŒØ¯Ù‡ÛŒØ¯ØŸ", 
+    "Ù‡Ø´Ø¯Ø§Ø±", 
     MessageBoxButton.OKCancel, 
     MessageBoxImage.Warning);
 ```
@@ -90,8 +90,8 @@ var result = RtlMessageBox.Show(
 #### 3. Yes/No + Question
 ```csharp
 var result = RtlMessageBox.Show(
-    "Â?Ç ÈÇ ÔÑÇ?Ø ãæÇİŞ?Ï¿", 
-    "ÓæÇá", 
+    "Ø¢ÛŒØ§ Ø¨Ø§ Ø´Ø±Ø§ÛŒØ· Ù…ÙˆØ§ÙÙ‚ÛŒØ¯ØŸ", 
+    "Ø³ÙˆØ§Ù„", 
     MessageBoxButton.YesNo, 
     MessageBoxImage.Question);
 ```
@@ -99,8 +99,8 @@ var result = RtlMessageBox.Show(
 #### 4. Yes/No/Cancel + Error
 ```csharp
 var result = RtlMessageBox.Show(
-    "ãÔ˜á? ÑÎ ÏÇÏå ÇÓÊ. å ˜ÇÑ? ÇäÌÇã ã?Ïå?Ï¿", 
-    "ÎØÇ", 
+    "Ù…Ø´Ú©Ù„ÛŒ Ø±Ø® Ø¯Ø§Ø¯Ù‡ Ø§Ø³Øª. Ú†Ù‡ Ú©Ø§Ø±ÛŒ Ø§Ù†Ø¬Ø§Ù… Ù…ÛŒâ€ŒØ¯Ù‡ÛŒØ¯ØŸ", 
+    "Ø®Ø·Ø§", 
     MessageBoxButton.YesNoCancel, 
     MessageBoxImage.Error);
 ```
@@ -108,8 +108,8 @@ var result = RtlMessageBox.Show(
 #### 5. Info Dialog
 ```csharp
 var result = RtlMessageBox.Show(
-    "ÇØáÇÚÇÊ ãåã", 
-    "ÇØáÇÚ", 
+    "Ø§Ø·Ù„Ø§Ø¹Ø§Øª Ù…Ù‡Ù…", 
+    "Ø§Ø·Ù„Ø§Ø¹", 
     MessageBoxButton.OK, 
     MessageBoxImage.Information);
 ```
@@ -117,24 +117,24 @@ var result = RtlMessageBox.Show(
 #### 6. Cancel/Retry + Stop
 ```csharp
 var result = RtlMessageBox.Show(
-    "Úãá?ÇÊ ãÊæŞİ ÔÏ", 
-    "ÊæŞİ", 
+    "Ø¹Ù…Ù„ÛŒØ§Øª Ù…ØªÙˆÙ‚Ù Ø´Ø¯", 
+    "ØªÙˆÙ‚Ù", 
     MessageBoxButton.OKCancel, 
     MessageBoxImage.Stop);
 ```
 
-## ?? Project Structure
+## ğŸ“ Project Structure
 
 ```
 Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo/
-??? MainForm.cs                           # Business logic and event handlers
-??? MainForm.Designer.cs                  # Designer-generated UI code
-??? MainForm.resx                         # Form resources
-??? Program.cs                            # Application entry point
-??? Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo.csproj
+â”œâ”€â”€ MainForm.cs                           # Business logic and event handlers
+â”œâ”€â”€ MainForm.Designer.cs                  # Designer-generated UI code
+â”œâ”€â”€ MainForm.resx                         # Form resources
+â”œâ”€â”€ Program.cs                            # Application entry point
+â””â”€â”€ Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo.csproj
 ```
 
-## ?? Implementation Details
+## ğŸ”§ Implementation Details
 
 ### MainForm.Designer.cs - UI Layout
 The designer file contains all UI element definitions:
@@ -184,8 +184,8 @@ public partial class MainForm : Form
     private void btnOkDialog_Click(object sender, EventArgs e)
     {
         var result = RtlMessageBox.Show(
-            "Ç?ä ?˜ ?Çã äãæäå ÇÓÊ.", 
-            "?ÛÇã", 
+            "Ø§ÛŒÙ† ÛŒÚ© Ù¾ÛŒØ§Ù… Ù†Ù…ÙˆÙ†Ù‡ Ø§Ø³Øª.", 
+            "Ù¾ÛŒØºØ§Ù…", 
             MessageBoxButton.OK, 
             MessageBoxImage.None);
         
@@ -197,7 +197,7 @@ public partial class MainForm : Form
 }
 ```
 
-## ?? Learning Objectives
+## ğŸ“š Learning Objectives
 
 This demo helps developers understand:
 
@@ -221,7 +221,7 @@ This demo helps developers understand:
 - Handling RTL text and layout considerations
 - Cultural considerations for Persian users
 
-## ??? Customization Examples
+## ğŸ¨ Customization Examples
 
 ### Custom Font Configuration
 ```csharp
@@ -268,8 +268,8 @@ btnCustomScenario.Click += btnCustomScenario_Click;
 private void btnCustomScenario_Click(object sender, EventArgs e)
 {
     var result = RtlMessageBox.Show(
-        "Â?Ç ã?ÎæÇå?Ï İÇ?á ÑÇ ÍĞİ ˜ä?Ï¿\nÇ?ä Úãá?ÇÊ ŞÇÈá ÈÇÒÔÊ ä?ÓÊ.",
-        "ÊÃ??Ï ÍĞİ",
+        "Ø¢ÛŒØ§ Ù…ÛŒâ€ŒØ®ÙˆØ§Ù‡ÛŒØ¯ ÙØ§ÛŒÙ„ Ø±Ø§ Ø­Ø°Ù Ú©Ù†ÛŒØ¯ØŸ\nØ§ÛŒÙ† Ø¹Ù…Ù„ÛŒØ§Øª Ù‚Ø§Ø¨Ù„ Ø¨Ø§Ø²Ú¯Ø´Øª Ù†ÛŒØ³Øª.",
+        "ØªØ£ÛŒÛŒØ¯ Ø­Ø°Ù",
         MessageBoxButton.YesNo,
         MessageBoxImage.Warning);
 
@@ -277,15 +277,15 @@ private void btnCustomScenario_Click(object sender, EventArgs e)
     {
         // Perform delete operation
         RtlMessageBox.Show(
-            "İÇ?á ÈÇ ãæİŞ?Ê ÍĞİ ÔÏ.",
-            "ãæİŞ?Ê",
+            "ÙØ§ÛŒÙ„ Ø¨Ø§ Ù…ÙˆÙÙ‚ÛŒØª Ø­Ø°Ù Ø´Ø¯.",
+            "Ù…ÙˆÙÙ‚ÛŒØª",
             MessageBoxButton.OK,
             MessageBoxImage.Information);
     }
 }
 ```
 
-## ?? UI Design Guidelines
+## ğŸ¯ UI Design Guidelines
 
 ### Designer Best Practices
 
@@ -348,7 +348,7 @@ private void ButtonName_Click(object sender, EventArgs e)
 }
 ```
 
-## ?? Development Tips
+## ğŸ’¡ Development Tips
 
 ### 1. **Designer Integration**
 - Use Visual Studio Designer for layout creation
@@ -370,7 +370,7 @@ private void ButtonName_Click(object sender, EventArgs e)
 - Verify button order and layout
 - Check keyboard navigation patterns
 
-## ?? Troubleshooting
+## ğŸ” Troubleshooting
 
 ### Common Issues
 
@@ -413,7 +413,7 @@ If `MainForm.Designer.cs` becomes corrupted:
 4. Open the form in designer
 5. Visual Studio will regenerate the designer file
 
-## ?? Architecture Notes
+## ğŸ—ï¸ Architecture Notes
 
 ### Separation of Concerns
 - **MainForm.Designer.cs**: UI layout, control properties, visual design
@@ -430,8 +430,8 @@ If `MainForm.Designer.cs` becomes corrupted:
 7. Result returned to event handler
 8. Optional demo result display
 
-## ?? See Also
+## ğŸ“š See Also
 
 - [RtlMessageBox.WindowsForms Documentation](../Barnamenevis.Net.RtlMessageBox.WindowsForms/README.md) - Main library documentation
-- [FontInstaller Documentation](../Barnamenevis.Net.FontInstaller/README.md) - Font installation utilities  
+- [Barnamenevis.Net.Tools Documentation](../Barnamenevis.Net.FontInstaller/README.md) - Font installation utilities  
 - [WPF Demo](../Barnamenevis.Net.RtlMessageBox.Wpf.Demo/README.md) - WPF version comparison
