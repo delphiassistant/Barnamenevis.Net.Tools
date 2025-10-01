@@ -12,18 +12,18 @@ The solution includes the **Barnamenevis.Net.Tools** library, which currently fo
 
 ### Core Libraries
 
-| Project | Folder | Description | Target Frameworks |
-|---------|--------|-------------|-------------------|
-| **Barnamenevis.Net.RtlMessageBox.Wpf** | [`Barnamenevis.Net.RtlMessageBox.Wpf/`](./Barnamenevis.Net.RtlMessageBox.Wpf/) | Pure WPF implementation with themed UI | .NET 6.0, 7.0, 8.0, 9.0 (Windows) |
-| **Barnamenevis.Net.RtlMessageBox.WindowsForms** | [`Barnamenevis.Net.RtlMessageBox.WindowsForms/`](./Barnamenevis.Net.RtlMessageBox.WindowsForms/) | Win32 MessageBox wrapper with RTL support | .NET 6.0, 7.0, 8.0, 9.0 (Windows) |
-| **Barnamenevis.Net.Tools** | [`Barnamenevis.Net.FontInstaller/`](./Barnamenevis.Net.FontInstaller/) | Comprehensive toolkit for Persian/Arabic development<br/>*Currently: Font installation utilities*<br/>*Future: Text processing, RTL helpers, Persian calendar, and more* | .NET 6.0, 7.0, 8.0, 9.0 |
+| Project | Description | Target Frameworks |
+|---------|-------------|-------------------|
+| **[Barnamenevis.Net.RtlMessageBox.Wpf](./Barnamenevis.Net.RtlMessageBox.Wpf/)** | Pure WPF implementation with themed UI | .NET 6.0, 7.0, 8.0, 9.0 (Windows) |
+| **[Barnamenevis.Net.RtlMessageBox.WindowsForms](./Barnamenevis.Net.RtlMessageBox.WindowsForms/)** | Win32 MessageBox wrapper with RTL support | .NET 6.0, 7.0, 8.0, 9.0 (Windows) |
+| **[Barnamenevis.Net.Tools](./Barnamenevis.Net.FontInstaller/)** | Comprehensive toolkit for Persian development<br/>*Currently: Font installation utilities*<br/>*Future: Text processing, RTL helpers, Persian calendar, and more* | .NET 6.0, 7.0, 8.0, 9.0 |
 
 ### Demo Applications
 
-| Project | Folder | Description | Features |
-|---------|--------|-------------|----------|
-| **Barnamenevis.Net.RtlMessageBox.Wpf.Demo** | [`Barnamenevis.Net.RtlMessageBox.Wpf.Demo/`](./Barnamenevis.Net.RtlMessageBox.Wpf.Demo/) | WPF demo with font auto-installation | Themed UI, Custom title bars |
-| **Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo** | [`Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo/`](./Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo/) | Windows Forms demo application | Designer-based UI, Standard controls |
+| Project | Description | Features |
+|---------|-------------|----------|
+| **[Barnamenevis.Net.RtlMessageBox.Wpf.Demo](./Barnamenevis.Net.RtlMessageBox.Wpf.Demo/)** | WPF demo with font auto-installation | Themed UI, Custom title bars |
+| **[Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo](./Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo/)** | Windows Forms demo application | Designer-based UI, Standard controls |
 
 ## ✨ Key Features
 
