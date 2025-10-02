@@ -422,8 +422,67 @@ namespace Barnamenevis.Net.RtlMessageBox.Wpf
         [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true, CharSet = System.Runtime.InteropServices.CharSet.Unicode)]
         private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
 
+        // Shell stock icons (modern, Fluent on recent Windows)
+        private enum SHSTOCKICONID : uint
+        {
+            SIID_HELP = 23,
+            SIID_WARNING = 78,
+            SIID_INFO = 79,
+            SIID_ERROR = 80
+        }
+
+        [System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential, CharSet = System.Runtime.InteropServices.CharSet.Unicode)]
+        private struct SHSTOCKICONINFO
+        {
+            public uint cbSize;
+            public IntPtr hIcon;
+            public int iSysImageIndex;
+            public int iIcon;
+            [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 260)]
+            public string szPath;
+        }
+
+        private const uint SHGSI_ICON = 0x000000100;
+        private const uint SHGSI_SMALLICON = 0x000000001;
+        private const uint SHGSI_LARGEICON = 0x000000000;
+        private const uint SHGSI_SHELLICONSIZE = 0x000000004;
+
+        [System.Runtime.InteropServices.DllImport("Shell32.dll", CharSet = System.Runtime.InteropServices.CharSet.Unicode)]
+        private static extern int SHGetStockIconInfo(SHSTOCKICONID siid, uint uFlags, ref SHSTOCKICONINFO psii);
+
         private static Image? CreateIconImage(MessageBoxImage icon)
         {
+            // Try modern shell stock icons first
+            SHSTOCKICONID? siid = icon switch
+            {
+                MessageBoxImage.Error or MessageBoxImage.Hand or MessageBoxImage.Stop => SHSTOCKICONID.SIID_ERROR,
+                MessageBoxImage.Warning or MessageBoxImage.Exclamation => SHSTOCKICONID.SIID_WARNING,
+                MessageBoxImage.Information or MessageBoxImage.Asterisk => SHSTOCKICONID.SIID_INFO,
+                MessageBoxImage.Question => SHSTOCKICONID.SIID_HELP,
+                _ => null
+            };
+
+            if (siid.HasValue)
+            {
+                var sii = new SHSTOCKICONINFO { cbSize = (uint)System.Runtime.InteropServices.Marshal.SizeOf<SHSTOCKICONINFO>() };
+                // large current shell size icon to get crisp visuals on modern Windows
+                int hr = SHGetStockIconInfo(siid.Value, SHGSI_ICON | SHGSI_LARGEICON | SHGSI_SHELLICONSIZE, ref sii);
+                if (hr == 0 && sii.hIcon != IntPtr.Zero)
+                {
+                    try
+                    {
+                        var imageSource = Imaging.CreateBitmapSourceFromHIcon(sii.hIcon, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                        imageSource.Freeze();
+                        return new Image { Source = imageSource, Width = 32, Height = 32 };
+                    }
+                    finally
+                    {
+                        DestroyIcon(sii.hIcon);
+                    }
+                }
+            }
+
+            // Fallback to legacy user32 stock icons if shell lookup failed
             int resId = icon switch
             {
                 MessageBoxImage.Error or MessageBoxImage.Hand or MessageBoxImage.Stop => IDI_ERROR,
@@ -434,7 +493,6 @@ namespace Barnamenevis.Net.RtlMessageBox.Wpf
             };
             if (resId == 0) return null;
 
-            // Load shared stock icon, then copy to get a handle we can destroy
             IntPtr hIconShared = LoadImage(IntPtr.Zero, (IntPtr)resId, IMAGE_ICON, 0, 0, LR_DEFAULTSIZE | LR_SHARED);
             if (hIconShared == IntPtr.Zero) return null;
             IntPtr hIcon = CopyIcon(hIconShared);
@@ -442,7 +500,7 @@ namespace Barnamenevis.Net.RtlMessageBox.Wpf
 
             try
             {
-                var imageSource = Imaging.CreateBitmapSourceFromHIcon(hIcon, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                var imageSource = Imaging.CreateBitmapSourceFromHIcon(hIcon, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                 imageSource.Freeze();
                 return new Image { Source = imageSource, Width = 32, Height = 32 };
             }

@@ -9,7 +9,7 @@
 
     <!-- NuGet Package Information -->
     <PackageId>Barnamenevis.Net.RtlMessageBox.Wpf</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
 	<Authors>Barnamenevis.Net</Authors>
     <Company>Barnamenevis.Net</Company>
     <Product>RTL MessageBox for WPF</Product>
