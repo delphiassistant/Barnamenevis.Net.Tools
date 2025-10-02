@@ -11,8 +11,6 @@ namespace Barnamenevis.Net.RtlMessageBox.WindowsForms
         public static string PreferredFontName { get; set; } = "Vazirmatn FD";
         public static double PreferredFontPointSize { get; set; } = 10.0; // points
         public static bool ApplyCustomFont { get; set; } = true;
-        // New: only apply custom font to buttons by default to avoid clipping text area after creation-time layout
-        public static bool ApplyCustomFontToMessageText { get; set; } = false;
 
         // New configuration: allow soft wrap insertion for long uninterrupted tokens (e.g., URLs, #selection)
         public static bool InsertSoftWrapsForLongTokens { get; set; } = true;
@@ -181,17 +179,18 @@ namespace Barnamenevis.Net.RtlMessageBox.WindowsForms
                         if (hFont != IntPtr.Zero)
                         {
                             s_dialogFonts[hwnd] = hFont;
-                            // Set font only on buttons by default to avoid clipping the static message text
-                            EnumChildWindows(hwnd, static (child, l) =>
+                            
+                            // Apply font to all child controls (buttons and static text)
+                            EnumChildWindows(hwnd, (child, lp) =>
                             {
                                 var clsName = new System.Text.StringBuilder(32);
                                 GetClassName(child, clsName, clsName.Capacity);
                                 var isButton = clsName.ToString() == "Button";
                                 var isStatic = clsName.ToString() == "Static";
 
-                                if (isButton || (ApplyCustomFontToMessageText && isStatic))
+                                if (isButton || isStatic)
                                 {
-                                    SendMessage(child, WM_SETFONT, l, (IntPtr)1);
+                                    SendMessage(child, WM_SETFONT, lp, (IntPtr)1);
                                 }
                                 return true;
                             }, hFont);

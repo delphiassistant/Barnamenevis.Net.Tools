@@ -9,9 +9,9 @@ namespace Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo
             InitializeComponent();
 
             // Configure RtlMessageBox for Persian fonts
-           RtlMessageBox.PreferredFontName = "Vazirmatn FD";
-           RtlMessageBox.PreferredFontPointSize = 10;
-           RtlMessageBox.ApplyCustomFont = true;
+            RtlMessageBox.PreferredFontName = "Vazirmatn FD";
+            RtlMessageBox.PreferredFontPointSize = 8;
+            RtlMessageBox.ApplyCustomFont = true;
 
             // Wire up event handlers
             btnOkDialog.Click += btnOkDialog_Click;
@@ -25,9 +25,9 @@ namespace Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo
         private void btnOkDialog_Click(object sender, EventArgs e)
         {
             var result = RtlMessageBox.Show(
-                "این یک پیام نمونه است.", 
-                "پیغام", 
-                MessageBoxButton.OK, 
+                "این یک پیام نمونه است.",
+                "پیغام",
+                MessageBoxButton.OK,
                 MessageBoxImage.None);
             System.Windows.Forms.MessageBox.Show($"Result: {result}", "Demo Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -35,9 +35,9 @@ namespace Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo
         private void btnOkCancelWarning_Click(object sender, EventArgs e)
         {
             var result = RtlMessageBox.Show(
-                "آیا ادامه می‌دهید؟", 
-                "هشدار", 
-                MessageBoxButton.OKCancel, 
+                "آیا ادامه می‌دهید؟",
+                "هشدار",
+                MessageBoxButton.OKCancel,
                 MessageBoxImage.Warning);
             System.Windows.Forms.MessageBox.Show($"Result: {result}", "Demo Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -45,9 +45,9 @@ namespace Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo
         private void btnYesNoQuestion_Click(object sender, EventArgs e)
         {
             var result = RtlMessageBox.Show(
-                "آیا با شرایط موافقید؟", 
-                "سوال", 
-                MessageBoxButton.YesNo, 
+                "آیا با شرایط موافقید؟",
+                "سوال",
+                MessageBoxButton.YesNo,
                 MessageBoxImage.Question);
             System.Windows.Forms.MessageBox.Show($"Result: {result}", "Demo Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -55,9 +55,9 @@ namespace Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo
         private void btnYesNoCancelError_Click(object sender, EventArgs e)
         {
             var result = RtlMessageBox.Show(
-                "مشکلی رخ داده است. چه کاری انجام می‌دهید؟ مشکلی رخ داده است. چه کاری انجام می‌دهید؟ مشکلی رخ داده است. چه کاری انجام می‌دهید؟", 
-                "خطا", 
-                MessageBoxButton.YesNoCancel, 
+                "مشکلی رخ داده است. چه کاری انجام می‌دهید؟ مشکلی رخ داده است. چه کاری انجام می‌دهید؟ مشکلی رخ داده است. چه کاری انجام می‌دهید؟",
+                "خطا",
+                MessageBoxButton.YesNoCancel,
                 MessageBoxImage.Error);
             System.Windows.Forms.MessageBox.Show($"Result: {result}", "Demo Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -65,9 +65,9 @@ namespace Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo
         private void btnInfoDialog_Click(object sender, EventArgs e)
         {
             var result = RtlMessageBox.Show(
-                "اطلاعات مهم", 
-                "اطلاع", 
-                MessageBoxButton.OK, 
+                "اطلاعات مهم",
+                "اطلاع",
+                MessageBoxButton.OK,
                 MessageBoxImage.Information);
             System.Windows.Forms.MessageBox.Show($"Result: {result}", "Demo Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -75,9 +75,9 @@ namespace Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo
         private void btnCancelRetryStop_Click(object sender, EventArgs e)
         {
             var result = RtlMessageBox.Show(
-                "عملیات متوقف شد", 
-                "توقف", 
-                MessageBoxButton.OKCancel, 
+                "عملیات متوقف شد",
+                "توقف",
+                MessageBoxButton.OKCancel,
                 MessageBoxImage.Stop);
             System.Windows.Forms.MessageBox.Show($"Result: {result}", "Demo Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
