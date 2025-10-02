@@ -55,7 +55,7 @@ namespace Barnamenevis.Net.RtlMessageBox.WindowsForms.Demo
         private void btnYesNoCancelError_Click(object sender, EventArgs e)
         {
             var result = RtlMessageBox.Show(
-                "مشکلی رخ داده است. چه کاری انجام می‌دهید؟", 
+                "مشکلی رخ داده است. چه کاری انجام می‌دهید؟ مشکلی رخ داده است. چه کاری انجام می‌دهید؟ مشکلی رخ داده است. چه کاری انجام می‌دهید؟", 
                 "خطا", 
                 MessageBoxButton.YesNoCancel, 
                 MessageBoxImage.Error);

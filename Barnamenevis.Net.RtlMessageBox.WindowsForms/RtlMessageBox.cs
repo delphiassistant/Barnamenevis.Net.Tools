@@ -11,6 +11,12 @@ namespace Barnamenevis.Net.RtlMessageBox.WindowsForms
         public static string PreferredFontName { get; set; } = "Vazirmatn FD";
         public static double PreferredFontPointSize { get; set; } = 10.0; // points
         public static bool ApplyCustomFont { get; set; } = true;
+        // New: only apply custom font to buttons by default to avoid clipping text area after creation-time layout
+        public static bool ApplyCustomFontToMessageText { get; set; } = false;
+
+        // New configuration: allow soft wrap insertion for long uninterrupted tokens (e.g., URLs, #selection)
+        public static bool InsertSoftWrapsForLongTokens { get; set; } = true;
+        public static int LongTokenWrapThreshold { get; set; } = 24;
 
         // Win32 interop to retitle MessageBox buttons to Persian without resources and to apply custom font
         private const int WH_CBT = 5;
@@ -175,10 +181,18 @@ namespace Barnamenevis.Net.RtlMessageBox.WindowsForms
                         if (hFont != IntPtr.Zero)
                         {
                             s_dialogFonts[hwnd] = hFont;
-                            // set font on all child controls
+                            // Set font only on buttons by default to avoid clipping the static message text
                             EnumChildWindows(hwnd, static (child, l) =>
                             {
-                                SendMessage(child, WM_SETFONT, l, (IntPtr)1);
+                                var clsName = new System.Text.StringBuilder(32);
+                                GetClassName(child, clsName, clsName.Capacity);
+                                var isButton = clsName.ToString() == "Button";
+                                var isStatic = clsName.ToString() == "Static";
+
+                                if (isButton || (ApplyCustomFontToMessageText && isStatic))
+                                {
+                                    SendMessage(child, WM_SETFONT, l, (IntPtr)1);
+                                }
                                 return true;
                             }, hFont);
                         }
@@ -289,6 +303,46 @@ namespace Barnamenevis.Net.RtlMessageBox.WindowsForms
             };
         }
 
+        // Insert zero-width space (U+200B) periodically in long uninterrupted tokens to allow wrapping
+        private static string PrepareTextForWrapping(string text)
+        {
+            if (!InsertSoftWrapsForLongTokens || string.IsNullOrEmpty(text) || LongTokenWrapThreshold <= 0)
+                return text;
+
+            const char ZWSP = '\u200B';
+            var builder = new System.Text.StringBuilder(text.Length + 16);
+            int run = 0;
+
+            foreach (var ch in text)
+            {
+                builder.Append(ch);
+
+                // Reset run on whitespace or explicit newline
+                if (char.IsWhiteSpace(ch))
+                {
+                    run = 0;
+                    continue;
+                }
+
+                // Encourage breaks after common punctuation and separators frequently seen in long tokens
+                if (ch is '-' or '_' or '/' or '\\' or ':' or '.' or '@' or '#' or '?' or '&' or '=' or '+' or '~' or '|' or ',')
+                {
+                    builder.Append(ZWSP);
+                    run = 0;
+                    continue;
+                }
+
+                run++;
+                if (run >= LongTokenWrapThreshold)
+                {
+                    builder.Append(ZWSP);
+                    run = 0;
+                }
+            }
+
+            return builder.ToString();
+        }
+
         // Ownerless overloads
         public static MessageBoxResult Show(string messageBoxText)
         {
@@ -320,7 +374,8 @@ namespace Barnamenevis.Net.RtlMessageBox.WindowsForms
             using (InstallPersianButtonsHook())
             {
                 var preferred = PreferredDefaultFor(button);
-                return System.Windows.MessageBox.Show(messageBoxText, caption, button, icon, preferred, AddRtl(options));
+                var prepared = PrepareTextForWrapping(messageBoxText);
+                return System.Windows.MessageBox.Show(prepared, caption, button, icon, preferred, AddRtl(options));
             }
         }
 
@@ -358,7 +413,8 @@ namespace Barnamenevis.Net.RtlMessageBox.WindowsForms
             using (InstallPersianButtonsHook())
             {
                 var preferred = PreferredDefaultFor(button);
-                return System.Windows.MessageBox.Show(owner, messageBoxText, caption, button, icon, preferred, AddRtl(options));
+                var prepared = PrepareTextForWrapping(messageBoxText);
+                return System.Windows.MessageBox.Show(owner, prepared, caption, button, icon, preferred, AddRtl(options));
             }
         }
     }
