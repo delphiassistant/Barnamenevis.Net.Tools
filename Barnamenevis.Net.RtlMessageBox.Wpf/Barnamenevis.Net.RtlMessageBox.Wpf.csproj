@@ -23,15 +23,17 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Copyright>Copyright © 2024 Barnamenevis.Net</Copyright>
     <PackageReleaseNotes>
-      Version 1.0.0 - Multi-targeting support:
-      - Pure WPF implementation with themed UI
-      - Compatible with .NET 6.0, 7.0, 8.0, and 9.0 (Windows)
-      - Automatic Persian button text translation
-      - Custom title bars with Persian fonts
-      - System sound integration
-      - Full RTL layout support
-      - Drop-in replacement for standard MessageBox
-    </PackageReleaseNotes>
+		Version 1.0.1:
+		- Modern Windows Icons are used in dialogs instead of legacy ones.
+		Version 1.0.0 - Multi-targeting support:
+		- Pure WPF implementation with themed UI
+		- Compatible with .NET 6.0, 7.0, 8.0, and 9.0 (Windows)
+		- Automatic Persian button text translation
+		- Custom title bars with Persian fonts
+		- System sound integration
+		- Full RTL layout support
+		- Drop-in replacement for standard MessageBox
+	</PackageReleaseNotes>
     
     <!-- Build Configuration -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

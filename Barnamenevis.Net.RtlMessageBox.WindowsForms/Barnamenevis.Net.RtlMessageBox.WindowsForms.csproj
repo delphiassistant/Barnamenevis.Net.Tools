@@ -24,15 +24,17 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Copyright>Copyright © 2024 Barnamenevis.Net</Copyright>
     <PackageReleaseNotes>
-      Version 1.0.0 - Multi-targeting support:
-      - Win32 MessageBox wrapper with RTL support
-      - Compatible with .NET 6.0, 7.0, 8.0, and 9.0 (Windows)
-      - Automatic Persian button text translation via hooks
-      - Custom font application to all dialog elements
-      - Full API compatibility with WPF MessageBox
-      - Real-time button text modification
-      - Proper focus and default button management
-    </PackageReleaseNotes>
+		Version 1.0.1:
+		- Long message text handling improved.
+		Version 1.0.0 - Multi-targeting support:
+		- Win32 MessageBox wrapper with RTL support
+		- Compatible with .NET 6.0, 7.0, 8.0, and 9.0 (Windows)
+		- Automatic Persian button text translation via hooks
+		- Custom font application to all dialog elements
+		- Full API compatibility with WPF MessageBox
+		- Real-time button text modification
+		- Proper focus and default button management
+	</PackageReleaseNotes>
     
     <!-- Build Configuration -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
