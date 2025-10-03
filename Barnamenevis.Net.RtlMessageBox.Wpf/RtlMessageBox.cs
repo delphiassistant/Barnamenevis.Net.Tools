@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interop;
@@ -99,23 +100,35 @@ namespace Barnamenevis.Net.RtlMessageBox.Wpf
             }
         }
 
+        private static Window? ResolveOwner(Window? owner)
+        {
+            if (owner != null) return owner;
+            var app = Application.Current;
+            if (app == null) return null;
+            // Prefer active window then MainWindow
+            var active = app.Windows.OfType<Window>().FirstOrDefault(w => w.IsActive) ?? app.MainWindow;
+            return active;
+        }
+
         private static MessageBoxResult ShowCore(Window? owner, string text, string caption, MessageBoxButton button, MessageBoxImage icon, MessageBoxResult defaultResult, MessageBoxOptions options)
         {
             // Play system sound before showing dialog
             PlaySystemSound(icon);
 
+            var resolvedOwner = ResolveOwner(owner);
+
             var window = new Window
             {
                 Title = caption ?? string.Empty,
                 ShowInTaskbar = false,
-                WindowStartupLocation = owner != null ? WindowStartupLocation.CenterOwner : WindowStartupLocation.CenterScreen,
+                WindowStartupLocation = resolvedOwner != null ? WindowStartupLocation.CenterOwner : WindowStartupLocation.CenterScreen,
                 SizeToContent = SizeToContent.WidthAndHeight,
                 ResizeMode = ResizeMode.NoResize,
                 WindowStyle = UseCustomTitleBar ? WindowStyle.None : WindowStyle.SingleBorderWindow,
                 FlowDirection = FlowDirection.RightToLeft,
                 MinWidth = 300,
                 MaxWidth = 600,
-                Topmost = owner?.Topmost ?? false
+                Topmost = resolvedOwner?.Topmost ?? true
             };
 
             if (ApplyCustomFont && !string.IsNullOrWhiteSpace(PreferredFontName))
@@ -124,9 +137,9 @@ namespace Barnamenevis.Net.RtlMessageBox.Wpf
                 window.FontSize = PreferredFontPointSize;
             }
 
-            if (owner != null)
+            if (resolvedOwner != null)
             {
-                window.Owner = owner;
+                window.Owner = resolvedOwner;
             }
 
             // OUTER chrome (adds a border for WindowStyle=None)
@@ -331,7 +344,7 @@ namespace Barnamenevis.Net.RtlMessageBox.Wpf
                 var target = okOrYesButton ?? defaultButton;
                 if (target != null)
                 {
-                    window.Dispatcher.BeginInvoke(DispatcherPriority.Input, new Action(() =>
+                    window.Dispatcher.BeginInvoke(DispatcherPriority.Input, new System.Action(() =>
                     {
                         FocusManager.SetFocusedElement(window, target);
                         Keyboard.Focus(target);
@@ -379,9 +392,9 @@ namespace Barnamenevis.Net.RtlMessageBox.Wpf
             const int UISF_HIDEFOCUS = 0x1;
             const int UISF_HIDEACCEL = 0x2;
             var hwnd = new WindowInteropHelper(window).Handle;
-            if (hwnd == IntPtr.Zero) return;
-            IntPtr wParam = (IntPtr)(UIS_CLEAR | ((UISF_HIDEFOCUS | UISF_HIDEACCEL) << 16));
-            SendMessage(hwnd, WM_CHANGEUISTATE, wParam, IntPtr.Zero);
+            if (hwnd == System.IntPtr.Zero) return;
+            System.IntPtr wParam = (System.IntPtr)(UIS_CLEAR | ((UISF_HIDEFOCUS | UISF_HIDEACCEL) << 16));
+            SendMessage(hwnd, WM_CHANGEUISTATE, wParam, System.IntPtr.Zero);
         }
 
         private static MessageBoxResult InferDefaultResult(MessageBoxButton button, MessageBoxResult defaultResult)
@@ -411,16 +424,16 @@ namespace Barnamenevis.Net.RtlMessageBox.Wpf
         private const int IDI_SHIELD = 32518;
 
         [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true, CharSet = System.Runtime.InteropServices.CharSet.Unicode)]
-        private static extern IntPtr LoadImage(IntPtr hinst, IntPtr lpszName, uint uType, int cxDesired, int cyDesired, uint fuLoad);
+        private static extern System.IntPtr LoadImage(System.IntPtr hinst, System.IntPtr lpszName, uint uType, int cxDesired, int cyDesired, uint fuLoad);
 
         [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
-        private static extern IntPtr CopyIcon(IntPtr hIcon);
+        private static extern System.IntPtr CopyIcon(System.IntPtr hIcon);
 
         [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
-        private static extern bool DestroyIcon(IntPtr hIcon);
+        private static extern bool DestroyIcon(System.IntPtr hIcon);
 
         [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true, CharSet = System.Runtime.InteropServices.CharSet.Unicode)]
-        private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
+        private static extern System.IntPtr SendMessage(System.IntPtr hWnd, int msg, System.IntPtr wParam, System.IntPtr lParam);
 
         // Shell stock icons (modern, Fluent on recent Windows)
         private enum SHSTOCKICONID : uint
@@ -435,7 +448,7 @@ namespace Barnamenevis.Net.RtlMessageBox.Wpf
         private struct SHSTOCKICONINFO
         {
             public uint cbSize;
-            public IntPtr hIcon;
+            public System.IntPtr hIcon;
             public int iSysImageIndex;
             public int iIcon;
             [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = 260)]
@@ -467,7 +480,7 @@ namespace Barnamenevis.Net.RtlMessageBox.Wpf
                 var sii = new SHSTOCKICONINFO { cbSize = (uint)System.Runtime.InteropServices.Marshal.SizeOf<SHSTOCKICONINFO>() };
                 // large current shell size icon to get crisp visuals on modern Windows
                 int hr = SHGetStockIconInfo(siid.Value, SHGSI_ICON | SHGSI_LARGEICON | SHGSI_SHELLICONSIZE, ref sii);
-                if (hr == 0 && sii.hIcon != IntPtr.Zero)
+                if (hr == 0 && sii.hIcon != System.IntPtr.Zero)
                 {
                     try
                     {
@@ -493,10 +506,10 @@ namespace Barnamenevis.Net.RtlMessageBox.Wpf
             };
             if (resId == 0) return null;
 
-            IntPtr hIconShared = LoadImage(IntPtr.Zero, (IntPtr)resId, IMAGE_ICON, 0, 0, LR_DEFAULTSIZE | LR_SHARED);
-            if (hIconShared == IntPtr.Zero) return null;
-            IntPtr hIcon = CopyIcon(hIconShared);
-            if (hIcon == IntPtr.Zero) return null;
+            System.IntPtr hIconShared = LoadImage(System.IntPtr.Zero, (System.IntPtr)resId, IMAGE_ICON, 0, 0, LR_DEFAULTSIZE | LR_SHARED);
+            if (hIconShared == System.IntPtr.Zero) return null;
+            System.IntPtr hIcon = CopyIcon(hIconShared);
+            if (hIcon == System.IntPtr.Zero) return null;
 
             try
             {

@@ -12,13 +12,13 @@ namespace Barnamenevis.Net.RtlMessageBox.Wpf.Demo
             RtlMessageBox.PreferredFontName = "Vazirmatn FD";
             RtlMessageBox.PreferredFontPointSize = 13;
             RtlMessageBox.ApplyCustomFont = true;
-            RtlMessageBox.UseCustomTitleBar = true;
+            RtlMessageBox.UseCustomTitleBar = false;
         }
 
         // WPF RtlMessageBox demos (pure WPF)
         private void BtnThOk_Click(object sender, RoutedEventArgs e)
         {
-            var r = RtlMessageBox.Show(this,"این یک پیام WPF است.", "پیغام");
+            var r = RtlMessageBox.Show("این یک پیام WPF است.", "پیغام");
             ResultText.Text = $"Result: {r}";
         }
 
