@@ -9,7 +9,7 @@
 
     <!-- NuGet Package Information -->
     <PackageId>Barnamenevis.Net.RtlMessageBox.Wpf</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
 	<Authors>Barnamenevis.Net</Authors>
     <Company>Barnamenevis.Net</Company>
     <Product>RTL MessageBox for WPF</Product>
@@ -23,6 +23,8 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Copyright>Copyright © 2024 Barnamenevis.Net</Copyright>
     <PackageReleaseNotes>
+		Version 1.0.2:
+		- Ensure that Dialogs always open as Modal.
 		Version 1.0.1:
 		- Modern Windows Icons are used in dialogs instead of legacy ones.
 		Version 1.0.0 - Multi-targeting support:
